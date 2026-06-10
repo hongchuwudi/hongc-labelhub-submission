@@ -1,0 +1,109 @@
+<mxfile host="Electron" agent="Claude">
+  <diagram name="抢单架构" id="grab-arch">
+    <mxGraphModel dx="1188" dy="864" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#1a1a2e;" value="抢单架构 — 并发认领控制" vertex="1">
+          <mxGeometry height="35" width="400" x="350" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="strategy-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontColor=#6b7280;" value="三种分发策略" vertex="1">
+          <mxGeometry height="20" width="120" x="40" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="first-come" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF2FF;strokeColor=#4f46e5;fontSize=10;arcSize=10;align=center;" value="&lt;b&gt;抢单 (first_come)&lt;/b&gt;&lt;br&gt;先到先得&lt;br&gt;每次认领 1 条&lt;br&gt;无认领上限" vertex="1">
+          <mxGeometry height="70" width="150" x="40" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="quota-grab" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#f59e0b;fontSize=10;arcSize=10;align=center;" value="&lt;b&gt;配额抢单 (quota_grab)&lt;/b&gt;&lt;br&gt;每人最多 N 条&lt;br&gt;认领时指定数量&lt;br&gt;额度用完即停" vertex="1">
+          <mxGeometry height="70" width="160" x="220" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="assigned" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#10b981;fontSize=10;arcSize=10;align=center;" value="&lt;b&gt;指派 (assigned)&lt;/b&gt;&lt;br&gt;Owner 手动分配&lt;br&gt;指定标注员&lt;br&gt;无需抢单" vertex="1">
+          <mxGeometry height="70" width="150" x="410" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="concurrent-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontColor=#6b7280;" value="并发抢单流程" vertex="1">
+          <mxGeometry height="20" width="120" x="40" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="labeler-a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF2FF;strokeColor=#4f46e5;fontSize=12;fontStyle=1;arcSize=20;" value="标注员 A" vertex="1">
+          <mxGeometry height="45" width="100" x="40" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="labeler-b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF2FF;strokeColor=#4f46e5;fontSize=12;fontStyle=1;arcSize=20;" value="标注员 B" vertex="1">
+          <mxGeometry height="45" width="100" x="40" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="labeler-c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF2FF;strokeColor=#4f46e5;fontSize=12;fontStyle=1;arcSize=20;" value="标注员 C" vertex="1">
+          <mxGeometry height="45" width="100" x="40" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="concurrent-note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#ef4444;fontStyle=1;" value="同时认领&lt;br&gt;同一条目" vertex="1">
+          <mxGeometry height="30" width="50" x="140" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ca1" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="252" as="sourcePoint" />
+            <mxPoint x="210" y="252" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ca2" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="322" as="sourcePoint" />
+            <mxPoint x="210" y="322" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ca3" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="392" as="sourcePoint" />
+            <mxPoint x="210" y="392" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="redis-lock" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#ef4444;strokeWidth=2;fontSize=10;arcSize=10;align=center;" value="&lt;b&gt;Redis SETNX&lt;/b&gt;&lt;br&gt;&lt;br&gt;Key: lock:task:{id}&lt;br&gt;:item:{item_id}&lt;br&gt;&lt;br&gt;原子操作&lt;br&gt;只有一个成功" vertex="1">
+          <mxGeometry height="180" width="150" x="215" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="success" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#10b981;fontSize=10;arcSize=10;" value="✅ A 持锁成功&lt;br&gt;写入 labeler_id=A" vertex="1">
+          <mxGeometry height="45" width="160" x="410" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="fail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#ef4444;fontSize=10;arcSize=10;" value="❌ B, C 持锁失败&lt;br&gt;返回「已被认领」" vertex="1">
+          <mxGeometry height="45" width="160" x="410" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="ca4" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#10b981;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="365" y="268" as="sourcePoint" />
+            <mxPoint x="410" y="268" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ca4-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#10b981;" value="成功" vertex="1">
+          <mxGeometry height="15" width="30" x="380" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="ca5" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="365" y="332" as="sourcePoint" />
+            <mxPoint x="410" y="332" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ca5-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#ef4444;" value="失败" vertex="1">
+          <mxGeometry height="15" width="30" x="380" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="quota-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fontColor=#6b7280;" value="Quota 二次校验（DB层）" vertex="1">
+          <mxGeometry height="20" width="170" x="40" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="db-check" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3b82f6;fontSize=10;arcSize=10;align=center;" value="&lt;b&gt;MySQL 兜底校验&lt;/b&gt;&lt;br&gt;&lt;br&gt;WHERE claimed_items &lt; grab_limit&lt;br&gt;&lt;br&gt;防止：Redis 锁超时 + 网络延迟&lt;br&gt;导致的边界超发" vertex="1">
+          <mxGeometry height="105" width="230" x="175" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="ca6" edge="1" parent="1" source="redis-lock" style="endArrow=classic;html=1;strokeColor=#3b82f6;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="db-check">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="290" y="380" as="sourcePoint" />
+            <mxPoint x="295" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ca6-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#3b82f6;" value="持锁后&lt;br&gt;二次校验" vertex="1">
+          <mxGeometry height="25" width="50" x="420" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="design-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#e5e7eb;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="170" width="460" x="580" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="design-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#1a1a2e;" value="设计要点" vertex="1">
+          <mxGeometry height="20" width="80" x="590" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="design-text" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=10;fontColor=#6b7280;" value="• 锁 Key 粒度：task_id + item_id，不同题目互不阻塞&lt;br&gt;• 锁超时时间：30s，防止死锁占用&lt;br&gt;• 双重保障：Redis SETNX (快速拦截) + DB WHERE 条件 (精确兜底)&lt;br&gt;• 配额抢单模式：grab_limit 限制每人最大认领数，认领时前端弹窗输入数量&lt;br&gt;• 指派模式：跳过 Redis 锁，直接写入 labeler_id，仅 Owner 操作无需并发控制&lt;br&gt;• 锁释放：提交/跳过时主动释放 + TTL 自动过期双重保障" vertex="1">
+          <mxGeometry height="120" width="430" x="590" y="295" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

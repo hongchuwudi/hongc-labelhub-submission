@@ -1,0 +1,16 @@
+/* ================================================================
+   TABLE RESPONSIVE
+   ================================================================ */
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 640px) {
+  .col-optional-sm {
+    display: none;
+  }
+}
+

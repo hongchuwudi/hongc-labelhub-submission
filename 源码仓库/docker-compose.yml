@@ -1,0 +1,19 @@
+ # 使用的 Compose 文件格式版本
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"           # 将宿主机的 8000 端口映射到容器的 8000 端口
+    env_file:
+      - .env                  # 把根目录的 .env 文件中的环境变量注入容器
+    restart: unless-stopped   # 容器意外停止时自动重启，除非手动停止
+
+  frontend:
+    build: ./frontend         # 用 ./frontend 目录下的 Dockerfile 构建前端镜像
+    ports:
+      - "5173:5173"           # 映射前端开发服务器端口
+    depends_on:
+      - backend               # 保证 backend 先启动，再启动 frontend
+    restart: unless-stopped

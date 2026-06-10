@@ -1,0 +1,51 @@
+/* ================================================================
+   ACTIVITY TIMELINE
+   ================================================================ */
+
+.timeline {
+  padding: 8px 0;
+}
+.timeline-item {
+  display: flex;
+  gap: 14px;
+  padding: 12px 24px;
+  transition: background var(--transition-fast);
+}
+.timeline-item:hover {
+  background: #f9fafb;
+}
+.timeline-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+.timeline-dot.blue  { background: var(--color-primary); }
+.timeline-dot.green { background: var(--color-success); }
+.timeline-dot.purple { background: var(--color-purple); }
+.timeline-dot.amber { background: var(--color-warning); }
+.timeline-body {
+  flex: 1;
+  min-width: 0;
+}
+.timeline-body .tl-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.timeline-body .tl-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 640px) {
+  .timeline-item {
+    padding: 10px 16px;
+  }
+  .timeline-body .tl-title {
+    font-size: 12px;
+  }
+}
+

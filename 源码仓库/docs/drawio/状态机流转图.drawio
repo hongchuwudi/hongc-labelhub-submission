@@ -1,0 +1,302 @@
+<mxfile host="Electron" agent="Claude">
+  <diagram name="状态机流转" id="state-machine">
+    <mxGraphModel dx="1188" dy="864" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#1a1a2e;" value="LabelHub 状态机 — 三级状态流转全图" vertex="1">
+          <mxGeometry height="35" width="500" x="400" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#1a1a2e;" value="Level 1 — 任务 (LabelTask)" vertex="1">
+          <mxGeometry height="25" width="220" x="30" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t-draft" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#9ca3af;strokeWidth=2;fontSize=12;arcSize=50;" value="&lt;b&gt;draft&lt;/b&gt;&lt;br&gt;草稿" vertex="1">
+          <mxGeometry height="60" width="100" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t-pub" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#10b981;strokeWidth=2;fontSize=12;arcSize=50;" value="&lt;b&gt;published&lt;/b&gt;&lt;br&gt;已发布" vertex="1">
+          <mxGeometry height="60" width="110" x="250" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t-paused" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#f59e0b;strokeWidth=2;fontSize=12;arcSize=50;" value="&lt;b&gt;paused&lt;/b&gt;&lt;br&gt;已暂停" vertex="1">
+          <mxGeometry height="60" width="110" x="480" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t-ended" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#ef4444;strokeWidth=2;fontSize=12;arcSize=50;" value="&lt;b&gt;ended&lt;/b&gt;&lt;br&gt;已结束" vertex="1">
+          <mxGeometry height="60" width="100" x="720" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="te1" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#4f46e5;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="130" as="sourcePoint" />
+            <mxPoint x="250" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="te1-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#4f46e5;" value="Owner 发布" vertex="1">
+          <mxGeometry height="15" width="60" x="167.5" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="te2" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#4f46e5;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="130" as="sourcePoint" />
+            <mxPoint x="480" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="te2-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#4f46e5;" value="Owner 暂停" vertex="1">
+          <mxGeometry height="15" width="60" x="390" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="te3" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#10b981;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="535" y="160" as="sourcePoint" />
+            <mxPoint x="360" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="te3-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#10b981;" value="Owner 恢复" vertex="1">
+          <mxGeometry height="15" width="60" x="420" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="te4" edge="1" parent="1" source="t-draft" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="t-ended">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="220" />
+              <mxPoint x="770" y="220" />
+            </Array>
+            <mxPoint x="140" y="230" as="sourcePoint" />
+            <mxPoint x="720" y="220" as="targetPoint" />
+          </mxGeometry>
+          <Array as="points">
+            <mxPoint x="140" y="190" />
+            <mxPoint x="770" y="190" />
+          </Array>
+        </mxCell>
+        <mxCell id="te4-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#ef4444;" value="Owner 结束（草稿直接废弃）" vertex="1">
+          <mxGeometry height="15" width="120" x="355" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="te5" edge="1" parent="1" source="t-paused" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="t-ended">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="100" as="sourcePoint" />
+            <mxPoint x="720" y="100" as="targetPoint" />
+          </mxGeometry>
+          <Array as="points">
+            <mxPoint x="360" y="80" />
+            <mxPoint x="770" y="80" />
+          </Array>
+        </mxCell>
+        <mxCell id="te5-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#ef4444;" value="Owner 结束" vertex="1">
+          <mxGeometry height="15" width="70" x="500" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="l2-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#1a1a2e;" value="Level 2 — 题目 (TaskItem)" vertex="1">
+          <mxGeometry height="25" width="220" x="37.5" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="i-pending" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#9ca3af;strokeWidth=2;fontSize=12;arcSize=15;" value="&lt;b&gt;pending&lt;/b&gt;&lt;br&gt;待标注" vertex="1">
+          <mxGeometry height="55" width="120" x="47.5" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="i-labeled" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#10b981;strokeWidth=2;fontSize=12;arcSize=15;" value="&lt;b&gt;labeled&lt;/b&gt;&lt;br&gt;已标注" vertex="1">
+          <mxGeometry height="55" width="120" x="297.5" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="i-skipped" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#f59e0b;strokeWidth=2;fontSize=12;arcSize=15;" value="&lt;b&gt;skipped&lt;/b&gt;&lt;br&gt;已跳过" vertex="1">
+          <mxGeometry height="55" width="120" x="547.5" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="ie1" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#3b82f6;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="167.5" y="327" as="sourcePoint" />
+            <mxPoint x="297.5" y="327" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ie1-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#3b82f6;" value="Labeler 提交标注" vertex="1">
+          <mxGeometry height="15" width="80" x="180" y="282" as="geometry" />
+        </mxCell>
+        <mxCell id="ie2" edge="1" parent="1" source="i-pending" style="endArrow=classic;html=1;strokeColor=#f59e0b;strokeWidth=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="i-skipped">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="360" />
+            </Array>
+            <mxPoint x="160" y="327" as="sourcePoint" />
+            <mxPoint x="540" y="327" as="targetPoint" />
+          </mxGeometry>
+          <Array as="points">
+            <mxPoint x="160" y="350" />
+            <mxPoint x="600" y="350" />
+          </Array>
+        </mxCell>
+        <mxCell id="ie2-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#f59e0b;" value="Labeler 跳过" vertex="1">
+          <mxGeometry height="15" width="70" x="300" y="348" as="geometry" />
+        </mxCell>
+        <mxCell id="ie3" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#10b981;strokeWidth=2;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="607.5" y="317" as="sourcePoint" />
+            <mxPoint x="417.5" y="317" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ie3-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#10b981;" value="回头标注" vertex="1">
+          <mxGeometry height="15" width="55" x="470" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-ti" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#9ca3af;strokeWidth=1;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="307.5" y="165" as="sourcePoint" />
+            <mxPoint x="307.5" y="275" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-ti-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#9ca3af;" value="1:N&lt;br&gt;task 发布时批量创建 item" vertex="1">
+          <mxGeometry height="25" width="120" x="187.5" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#1a1a2e;" value="Level 3 — 审核结果 (LabelResult) — 6 状态 + 全通道" vertex="1">
+          <mxGeometry height="25" width="420" x="50" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="r-submitted" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF2FF;strokeColor=#4f46e5;strokeWidth=2;fontSize=11;arcSize=15;" value="&lt;b&gt;submitted&lt;/b&gt;&lt;br&gt;已提交" vertex="1">
+          <mxGeometry height="55" width="120" x="60" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="r-ai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E8FF;strokeColor=#8b5cf6;strokeWidth=2;fontSize=11;arcSize=15;" value="&lt;b&gt;ai_reviewing&lt;/b&gt;&lt;br&gt;AI 审核中" vertex="1">
+          <mxGeometry height="55" width="125" x="270" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="r-review" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#f59e0b;strokeWidth=2;fontSize=11;arcSize=15;" value="&lt;b&gt;review&lt;/b&gt;&lt;br&gt;复审中" vertex="1">
+          <mxGeometry height="55" width="120" x="490" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="r-final" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3b82f6;strokeWidth=2;fontSize=11;arcSize=15;" value="&lt;b&gt;final_review&lt;/b&gt;&lt;br&gt;终审中" vertex="1">
+          <mxGeometry height="55" width="125" x="700" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="r-warehouse" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#10b981;strokeWidth=3;fontSize=12;arcSize=15;" value="&lt;b&gt;warehouse&lt;/b&gt;&lt;br&gt;已入库" vertex="1">
+          <mxGeometry height="55" width="130" x="920" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="r-rejected" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#ef4444;strokeWidth=2;fontSize=12;arcSize=15;" value="&lt;b&gt;rejected&lt;/b&gt;&lt;br&gt;已打回" vertex="1">
+          <mxGeometry height="55" width="120" x="490" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="re1" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#8b5cf6;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="557" as="sourcePoint" />
+            <mxPoint x="270" y="557" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="re1-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=8;fontColor=#8b5cf6;" value="Labeler 提交" vertex="1">
+          <mxGeometry height="12" width="60" x="200" y="538" as="geometry" />
+        </mxCell>
+        <mxCell id="re2" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#10b981;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="395" y="556.6" as="sourcePoint" />
+            <mxPoint x="490" y="556.6" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="re2-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=8;fontColor=#10b981;" value="AI pass/review" vertex="1">
+          <mxGeometry height="12" width="65" x="410" y="533" as="geometry" />
+        </mxCell>
+        <mxCell id="re3" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#3b82f6;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="557" as="sourcePoint" />
+            <mxPoint x="700" y="557" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="re3-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=8;fontColor=#3b82f6;" value="复审通过" vertex="1">
+          <mxGeometry height="12" width="50" x="630" y="538" as="geometry" />
+        </mxCell>
+        <mxCell id="re4" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#10b981;strokeWidth=3;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="825" y="557" as="sourcePoint" />
+            <mxPoint x="920" y="557" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="re4-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=8;fontColor=#10b981;fontStyle=1;" value="终审通过→入库" vertex="1">
+          <mxGeometry height="12" width="65" x="840" y="538" as="geometry" />
+        </mxCell>
+        <mxCell id="re5" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="332" y="585" as="sourcePoint" />
+            <mxPoint x="490" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="re5-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=8;fontColor=#ef4444;" value="AI 不合格&lt;br&gt;直接打回" vertex="1">
+          <mxGeometry height="20" width="55" x="395" y="597" as="geometry" />
+        </mxCell>
+        <mxCell id="re6" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="585" as="sourcePoint" />
+            <mxPoint x="550" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="re6-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=8;fontColor=#ef4444;" value="复审打回" vertex="1">
+          <mxGeometry height="12" width="50" x="555" y="605" as="geometry" />
+        </mxCell>
+        <mxCell id="re7" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="762" y="585" as="sourcePoint" />
+            <mxPoint x="610" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="re7-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=8;fontColor=#ef4444;" value="终审打回" vertex="1">
+          <mxGeometry height="12" width="50" x="665" y="605" as="geometry" />
+        </mxCell>
+        <mxCell id="re8" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#f59e0b;strokeWidth=2;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="670" as="sourcePoint" />
+            <mxPoint x="550" y="585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="re8-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=8;fontColor=#f59e0b;" value="审核员重新打开&lt;br&gt;（误操作恢复/申诉）" vertex="1">
+          <mxGeometry height="20" width="100" x="545" y="625" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-ir" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#9ca3af;strokeWidth=1;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="357" y="360" as="sourcePoint" />
+            <mxPoint x="357" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel-ir-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontColor=#9ca3af;" value="1:1&lt;br&gt;labeler 提交即创建 Result" vertex="1">
+          <mxGeometry height="25" width="120" x="230" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#e5e7eb;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="65" width="1000" x="60" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#1a1a2e;" value="图例" vertex="1">
+          <mxGeometry height="18" width="40" x="75" y="805" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-owner" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4f46e5;strokeColor=none;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="14" width="14" x="75" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-owner-t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#6b7280;" value="Owner 操作" vertex="1">
+          <mxGeometry height="16" width="65" x="93" y="829" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-labeler" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3b82f6;strokeColor=none;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="14" width="14" x="170" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-labeler-t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#6b7280;" value="Labeler 操作" vertex="1">
+          <mxGeometry height="16" width="70" x="188" y="829" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-ai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8b5cf6;strokeColor=none;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="14" width="14" x="280" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-ai-t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#6b7280;" value="AI Agent 自动" vertex="1">
+          <mxGeometry height="16" width="75" x="298" y="829" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-reviewer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;strokeColor=none;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="14" width="14" x="400" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-reviewer-t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#6b7280;" value="Reviewer 操作" vertex="1">
+          <mxGeometry height="16" width="75" x="418" y="829" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-reject" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=none;arcSize=10;" value="" vertex="1">
+          <mxGeometry height="14" width="14" x="520" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-reject-t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#6b7280;" value="打回 (Reject)" vertex="1">
+          <mxGeometry height="16" width="70" x="538" y="829" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-dashed" edge="1" parent="1" style="endArrow=classic;html=1;strokeColor=#9ca3af;strokeWidth=1;dashed=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="837" as="sourcePoint" />
+            <mxPoint x="670" y="837" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-dashed-t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#6b7280;" value="可选/回退路径" vertex="1">
+          <mxGeometry height="16" width="75" x="675" y="829" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-audit" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#6b7280;" value="● 每次状态迁移自动写入 audit_logs，完整审计时间线可追溯" vertex="1">
+          <mxGeometry height="16" width="280" x="770" y="829" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=9;fontColor=#9ca3af;" value="注：枚举用 VARCHAR 存储，状态值定义在应用层 state_machine/ 模块。非法转移由 validate_transition() 自动拒绝。" vertex="1">
+          <mxGeometry height="16" width="600" x="60" y="878" as="geometry" />
+        </mxCell>
+        <mxCell id="VAQYDbvjtm_Mx730Fj1F-2" edge="1" parent="1" source="t-paused" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fillColor=#e51400;strokeColor=#B20000;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="520" y="250" as="sourcePoint" />
+            <mxPoint x="535" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VAQYDbvjtm_Mx730Fj1F-3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#ef4444;strokeWidth=2;" value="Owner 结束" vertex="1">
+          <mxGeometry height="15" width="70" x="535" y="170" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

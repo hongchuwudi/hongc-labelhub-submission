@@ -1,0 +1,411 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.0.3, pluggy-1.6.0 -- E:\ProfessionalSF\miniconda\python.exe
+cachedir: .pytest_cache
+rootdir: D:\01_program\57_porject\Hongc-LabelHub\backend
+plugins: anyio-4.12.1, langsmith-0.8.7, asyncio-1.4.0, base-url-2.1.0, cov-7.1.0, playwright-0.8.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 140 items
+
+tests/ai/test_ai_review.py::TestPromptBuilding::test_prompt_var_substitution PASSED [  0%]
+tests/ai/test_ai_review.py::TestPromptBuilding::test_dimensions_table_generation PASSED [  1%]
+tests/ai/test_ai_review.py::TestPydanticModels::test_valid_result PASSED [  2%]
+tests/ai/test_ai_review.py::TestPydanticModels::test_invalid_score PASSED [  2%]
+tests/ai/test_ai_review.py::TestPydanticModels::test_invalid_verdict PASSED [  3%]
+tests/ai/test_ai_review.py::TestPydanticModels::test_serialization PASSED [  4%]
+tests/ai/test_ai_review.py::TestMQPublish::test_publish_when_ai_config_set PASSED [  5%]
+tests/ai/test_ai_review.py::TestMQPublish::test_no_publish_when_no_config PASSED [  5%]
+tests/auth/test_auth_api.py::TestRegisterAPI::test_register PASSED       [  6%]
+tests/auth/test_auth_api.py::TestRegisterAPI::test_register_duplicate PASSED [  7%]
+tests/auth/test_auth_api.py::TestLoginAPI::test_login PASSED             [  7%]
+tests/auth/test_auth_api.py::TestLoginAPI::test_login_wrong_password PASSED [  8%]
+tests/auth/test_auth_api.py::TestMeAPI::test_me_with_valid_token PASSED  [  9%]
+tests/auth/test_auth_api.py::TestMeAPI::test_me_without_token PASSED     [ 10%]
+tests/auth/test_auth_api.py::TestMeAPI::test_me_with_invalid_token PASSED [ 10%]
+tests/auth/test_auth_api.py::TestRefreshAPI::test_refresh PASSED         [ 11%]
+tests/auth/test_auth_service.py::TestRegister::test_register_success PASSED [ 12%]
+tests/auth/test_auth_service.py::TestRegister::test_register_duplicate PASSED [ 12%]
+tests/auth/test_auth_service.py::TestRegister::test_default_role_is_labeler PASSED [ 13%]
+tests/auth/test_auth_service.py::TestLogin::test_login_success PASSED    [ 14%]
+tests/auth/test_auth_service.py::TestLogin::test_login_wrong_password PASSED [ 15%]
+tests/auth/test_auth_service.py::TestLogin::test_login_nonexistent_user PASSED [ 15%]
+tests/auth/test_auth_service.py::TestRefresh::test_refresh_success PASSED [ 16%]
+tests/auth/test_auth_service.py::TestRefresh::test_refresh_token_one_time_use PASSED [ 17%]
+tests/auth/test_auth_service.py::TestRefresh::test_refresh_invalid_token PASSED [ 17%]
+tests/common/test_export.py::TestExportGenerate::test_json PASSED        [ 18%]
+tests/common/test_export.py::TestExportGenerate::test_jsonl PASSED       [ 19%]
+tests/common/test_export.py::TestExportGenerate::test_csv PASSED         [ 20%]
+tests/common/test_export.py::TestExportGenerate::test_xlsx PASSED        [ 20%]
+tests/common/test_export.py::TestExportGenerate::test_empty_export PASSED [ 21%]
+tests/common/test_export.py::TestExportGenerate::test_include_review PASSED [ 22%]
+tests/common/test_export.py::TestExportGenerate::test_include_review_false PASSED [ 22%]
+tests/common/test_export.py::TestExportJob::test_create_job PASSED       [ 23%]
+tests/common/test_export.py::TestExportJob::test_field_mapping PASSED    [ 24%]
+tests/common/test_export.py::TestExportJob::test_field_mapping_with_rename PASSED [ 25%]
+tests/common/test_export.py::TestExportJob::test_list_jobs PASSED        [ 25%]
+tests/common/test_security.py::TestPasswordHashing::test_hash_and_verify PASSED [ 26%]
+tests/common/test_security.py::TestPasswordHashing::test_wrong_password PASSED [ 27%]
+tests/common/test_security.py::TestAccessToken::test_create_and_decode PASSED [ 27%]
+tests/common/test_security.py::TestAccessToken::test_decode_invalid_token PASSED [ 28%]
+tests/common/test_security.py::TestAccessToken::test_decode_wrong_type PASSED [ 29%]
+tests/common/test_security.py::TestAccessToken::test_expired_token PASSED [ 30%]
+tests/common/test_security.py::TestRefreshToken::test_create_is_jwt PASSED [ 30%]
+tests/common/test_security.py::TestRefreshToken::test_unique_jti PASSED  [ 31%]
+tests/common/test_security.py::TestRefreshToken::test_decode_invalid PASSED [ 32%]
+tests/common/test_security.py::TestRefreshToken::test_decode_wrong_type PASSED [ 32%]
+tests/common/test_security.py::TestRefreshToken::test_expired PASSED     [ 33%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_item_pending_to_labeled PASSED [ 34%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_item_pending_to_skipped PASSED [ 35%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_item_skipped_to_labeled PASSED [ 35%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_item_labeled_is_terminal PASSED [ 36%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_result_submitted_to_ai_reviewing PASSED [ 37%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_result_ai_reviewing_to_review PASSED [ 37%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_result_ai_reviewing_to_rejected PASSED [ 38%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_result_review_to_final_review PASSED [ 39%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_result_review_to_rejected PASSED [ 40%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_result_final_review_to_warehouse PASSED [ 40%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_result_final_review_to_rejected PASSED [ 41%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_result_rejected_to_review PASSED [ 42%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_result_rejected_other_invalid PASSED [ 42%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_result_warehouse_is_terminal PASSED [ 43%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_task_draft_to_published PASSED [ 44%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_task_published_to_paused PASSED [ 45%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_task_published_to_ended PASSED [ 45%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_task_paused_to_published PASSED [ 46%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_task_ended_is_terminal PASSED [ 47%]
+tests/common/test_state_machine.py::TestTransitionsTable::test_draft_cannot_jump_to_paused PASSED [ 47%]
+tests/common/test_state_machine.py::TestTransitHelper::test_transit_success PASSED [ 48%]
+tests/common/test_state_machine.py::TestTransitHelper::test_transit_invalid PASSED [ 49%]
+tests/common/test_state_machine.py::TestReviewFlow::test_full_flow_to_warehouse PASSED [ 50%]
+tests/common/test_state_machine.py::TestReviewFlow::test_reject_without_comment PASSED [ 50%]
+tests/common/test_state_machine.py::TestReviewFlow::test_reject_with_comment PASSED [ 51%]
+tests/common/test_state_machine.py::TestReviewFlow::test_rejected_reopen_to_review PASSED [ 52%]
+tests/common/test_web_owner_task.py::TestPageAccess::test_tasks_page_accessible[chromium] FAILED [ 52%]
+tests/common/test_web_owner_task.py::TestPageAccess::test_empty_state_shown[chromium] FAILED [ 53%]
+tests/common/test_web_owner_task.py::TestCreateTask::test_create_drawer_opens[chromium] FAILED [ 54%]
+tests/common/test_web_owner_task.py::TestCreateTask::test_create_drawer_cancel[chromium] FAILED [ 55%]
+tests/common/test_web_owner_task.py::TestCreateTask::test_strategy_switches_assignee[chromium] FAILED [ 55%]
+tests/common/test_web_owner_task.py::TestCreateTask::test_required_validation[chromium] FAILED [ 56%]
+tests/common/test_web_owner_task.py::TestStatusFlow::test_status_filter[chromium] FAILED [ 57%]
+tests/common/test_web_owner_task.py::TestMobileResponsive::test_mobile_hides_columns[chromium] FAILED [ 57%]
+tests/common/test_web_owner_task.py::TestMobileResponsive::test_mobile_detail_button[chromium] FAILED [ 58%]
+tests/datasets/test_dataset_service.py::TestDatasetCRUD::test_create PASSED [ 59%]
+tests/datasets/test_dataset_service.py::TestDatasetCRUD::test_get_not_found PASSED [ 60%]
+tests/datasets/test_dataset_service.py::TestDatasetCRUD::test_delete PASSED [ 60%]
+tests/datasets/test_dataset_service.py::TestItemBatchImport::test_batch_create PASSED [ 61%]
+tests/datasets/test_dataset_service.py::TestItemBatchImport::test_batch_create_empty PASSED [ 62%]
+tests/datasets/test_dataset_service.py::TestItemBatchImport::test_list_items_pagination PASSED [ 62%]
+tests/tasks/test_concurrent_claim.py::TestConcurrentQuotaGrab::test_no_duplicate_assignment PASSED [ 63%]
+tests/tasks/test_concurrent_claim.py::TestConcurrentQuotaGrab::test_first_come_only_one_wins PASSED [ 64%]
+tests/tasks/test_human_review.py::TestBatchReview::test_batch_approve FAILED [ 65%]
+tests/tasks/test_human_review.py::TestBatchReview::test_batch_reject_needs_comment FAILED [ 65%]
+tests/tasks/test_human_review.py::TestAuditLog::test_audit_on_review FAILED [ 66%]
+tests/tasks/test_human_review.py::TestAuditLog::test_audit_on_reject FAILED [ 67%]
+tests/tasks/test_human_review.py::TestAuditLog::test_audit_filtered_by_task FAILED [ 67%]
+tests/tasks/test_labeling_workbench.py::TestListTaskItems::test_list_all_items PASSED [ 68%]
+tests/tasks/test_labeling_workbench.py::TestListTaskItems::test_owner_sees_all PASSED [ 69%]
+tests/tasks/test_labeling_workbench.py::TestListTaskItems::test_filter_by_status PASSED [ 70%]
+tests/tasks/test_labeling_workbench.py::TestGetTaskItem::test_get_without_result PASSED [ 70%]
+tests/tasks/test_labeling_workbench.py::TestGetTaskItem::test_get_with_result PASSED [ 71%]
+tests/tasks/test_labeling_workbench.py::TestSkipItem::test_skip_and_revisit PASSED [ 72%]
+tests/tasks/test_labeling_workbench.py::TestSkipItem::test_skip_nonexistent PASSED [ 72%]
+tests/tasks/test_labeling_workbench.py::TestCreateResult::test_submit_success PASSED [ 73%]
+tests/tasks/test_labeling_workbench.py::TestCreateResult::test_duplicate_submit_rejected PASSED [ 74%]
+tests/tasks/test_labeling_workbench.py::TestCreateResult::test_submit_after_rejected_allowed PASSED [ 75%]
+tests/tasks/test_labeling_workbench.py::TestMyResultsAndStats::test_my_results PASSED [ 75%]
+tests/tasks/test_labeling_workbench.py::TestMyResultsAndStats::test_my_stats FAILED [ 76%]
+tests/tasks/test_labeling_workbench.py::TestMyResultsAndStats::test_unclaimed_task_stats FAILED [ 77%]
+tests/tasks/test_labeling_workbench.py::TestAccessControl::test_l1_can_list_items PASSED [ 77%]
+tests/tasks/test_labeling_workbench.py::TestAccessControl::test_l2_cannot_list_items PASSED [ 78%]
+tests/tasks/test_labeling_workbench.py::TestAccessControl::test_l2_cannot_skip PASSED [ 79%]
+tests/tasks/test_labeling_workbench.py::TestAccessControl::test_l2_cannot_see_results PASSED [ 80%]
+tests/tasks/test_labeling_workbench.py::TestAccessControl::test_l2_cannot_see_stats PASSED [ 80%]
+tests/tasks/test_task_api.py::TestClaimTask::test_claim_success PASSED   [ 81%]
+tests/tasks/test_task_api.py::TestClaimTask::test_claim_wrong_strategy PASSED [ 82%]
+tests/tasks/test_task_api.py::TestClaimTask::test_claim_not_published PASSED [ 82%]
+tests/tasks/test_task_api.py::TestClaimTask::test_claim_already_claimed PASSED [ 83%]
+tests/tasks/test_task_api.py::TestQuotaGrab::test_quota_grab_success PASSED [ 84%]
+tests/tasks/test_task_api.py::TestQuotaGrab::test_quota_grab_default_limit PASSED [ 85%]
+tests/tasks/test_task_api.py::TestQuotaGrab::test_quota_grab_exceed_limit PASSED [ 85%]
+tests/tasks/test_task_api.py::TestQuotaGrab::test_quota_grab_partial_remaining PASSED [ 86%]
+tests/tasks/test_task_api.py::TestQuotaGrab::test_quota_grab_no_items_left PASSED [ 87%]
+tests/tasks/test_task_api.py::TestQuotaGrab::test_quota_grab_partial_available PASSED [ 87%]
+tests/tasks/test_task_api.py::TestQuotaGrab::test_quota_grab_not_published PASSED [ 88%]
+tests/tasks/test_task_api.py::TestCheckTaskAccess::test_owner_access_own_task PASSED [ 89%]
+tests/tasks/test_task_api.py::TestCheckTaskAccess::test_owner_cannot_access_others_task PASSED [ 90%]
+tests/tasks/test_task_api.py::TestCheckTaskAccess::test_labeler_first_come_access PASSED [ 90%]
+tests/tasks/test_task_api.py::TestCheckTaskAccess::test_labeler_first_come_denied PASSED [ 91%]
+tests/tasks/test_task_api.py::TestCheckTaskAccess::test_labeler_quota_grab_access PASSED [ 92%]
+tests/tasks/test_task_api.py::TestCheckTaskAccess::test_labeler_quota_grab_denied PASSED [ 92%]
+tests/tasks/test_task_api.py::TestCheckTaskAccess::test_labeler_assigned_access PASSED [ 93%]
+tests/tasks/test_task_api.py::TestCheckTaskAccess::test_labeler_assigned_denied PASSED [ 94%]
+tests/tasks/test_task_api.py::TestCheckTaskAccess::test_reviewer_access_any PASSED [ 95%]
+tests/tasks/test_task_api.py::TestCreateResult::test_no_task_id_in_kwargs PASSED [ 95%]
+tests/tasks/test_task_api.py::TestListTasksFilter::test_filter_by_assignee PASSED [ 96%]
+tests/tasks/test_task_api.py::TestListTasksFilter::test_filter_by_status PASSED [ 97%]
+tests/tasks/test_task_api.py::TestListItemsFilter::test_list_items PASSED [ 97%]
+tests/tasks/test_task_items.py::TestListTaskItems::test_returns_items_regardless_of_labeler_id FAILED [ 98%]
+tests/tasks/test_task_items.py::TestListTaskItems::test_returns_empty_for_nonexistent_task PASSED [ 99%]
+tests/tasks/test_task_items.py::TestListTaskItems::test_last_result_included FAILED [100%]
+
+================================== FAILURES ===================================
+_____________ TestPageAccess.test_tasks_page_accessible[chromium] _____________
+tests\common\test_web_owner_task.py:41: in test_tasks_page_accessible
+    login_as_owner(page)
+tests\common\test_web_owner_task.py:35: in login_as_owner
+    page.wait_for_url(f"{BASE}/datasets", timeout=5000)
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\sync_api\_generated.py:9766: in wait_for_url
+    self._sync(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_page.py:585: in wait_for_url
+    return await self._main_frame.wait_for_url(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:266: in wait_for_url
+    async with self.expect_navigation(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_event_context_manager.py:33: in __aexit__
+    await self._future
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:242: in continuation
+    event = await waiter.result()
+            ^^^^^^^^^^^^^^^^^^^^^
+E   playwright._impl._errors.TimeoutError: Timeout 5000ms exceeded.
+E   =========================== logs ===========================
+E   waiting for navigation to "http://localhost:5173/datasets" until 'load'
+E   ============================================================
+_______________ TestPageAccess.test_empty_state_shown[chromium] _______________
+tests\common\test_web_owner_task.py:47: in test_empty_state_shown
+    login_as_owner(page)
+tests\common\test_web_owner_task.py:35: in login_as_owner
+    page.wait_for_url(f"{BASE}/datasets", timeout=5000)
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\sync_api\_generated.py:9766: in wait_for_url
+    self._sync(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_page.py:585: in wait_for_url
+    return await self._main_frame.wait_for_url(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:266: in wait_for_url
+    async with self.expect_navigation(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_event_context_manager.py:33: in __aexit__
+    await self._future
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:242: in continuation
+    event = await waiter.result()
+            ^^^^^^^^^^^^^^^^^^^^^
+E   playwright._impl._errors.TimeoutError: Timeout 5000ms exceeded.
+E   =========================== logs ===========================
+E   waiting for navigation to "http://localhost:5173/datasets" until 'load'
+E   ============================================================
+______________ TestCreateTask.test_create_drawer_opens[chromium] ______________
+tests\common\test_web_owner_task.py:56: in test_create_drawer_opens
+    login_as_owner(page)
+tests\common\test_web_owner_task.py:35: in login_as_owner
+    page.wait_for_url(f"{BASE}/datasets", timeout=5000)
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\sync_api\_generated.py:9766: in wait_for_url
+    self._sync(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_page.py:585: in wait_for_url
+    return await self._main_frame.wait_for_url(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:266: in wait_for_url
+    async with self.expect_navigation(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_event_context_manager.py:33: in __aexit__
+    await self._future
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:242: in continuation
+    event = await waiter.result()
+            ^^^^^^^^^^^^^^^^^^^^^
+E   playwright._impl._errors.TimeoutError: Timeout 5000ms exceeded.
+E   =========================== logs ===========================
+E   waiting for navigation to "http://localhost:5173/datasets" until 'load'
+E   ============================================================
+_____________ TestCreateTask.test_create_drawer_cancel[chromium] ______________
+tests\common\test_web_owner_task.py:63: in test_create_drawer_cancel
+    login_as_owner(page)
+tests\common\test_web_owner_task.py:35: in login_as_owner
+    page.wait_for_url(f"{BASE}/datasets", timeout=5000)
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\sync_api\_generated.py:9766: in wait_for_url
+    self._sync(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_page.py:585: in wait_for_url
+    return await self._main_frame.wait_for_url(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:266: in wait_for_url
+    async with self.expect_navigation(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_event_context_manager.py:33: in __aexit__
+    await self._future
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:242: in continuation
+    event = await waiter.result()
+            ^^^^^^^^^^^^^^^^^^^^^
+E   playwright._impl._errors.TimeoutError: Timeout 5000ms exceeded.
+E   =========================== logs ===========================
+E   waiting for navigation to "http://localhost:5173/datasets" until 'load'
+E   ============================================================
+__________ TestCreateTask.test_strategy_switches_assignee[chromium] ___________
+tests\common\test_web_owner_task.py:72: in test_strategy_switches_assignee
+    login_as_owner(page)
+tests\common\test_web_owner_task.py:35: in login_as_owner
+    page.wait_for_url(f"{BASE}/datasets", timeout=5000)
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\sync_api\_generated.py:9766: in wait_for_url
+    self._sync(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_page.py:585: in wait_for_url
+    return await self._main_frame.wait_for_url(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:266: in wait_for_url
+    async with self.expect_navigation(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_event_context_manager.py:33: in __aexit__
+    await self._future
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:242: in continuation
+    event = await waiter.result()
+            ^^^^^^^^^^^^^^^^^^^^^
+E   playwright._impl._errors.TimeoutError: Timeout 5000ms exceeded.
+E   =========================== logs ===========================
+E   waiting for navigation to "http://localhost:5173/datasets" until 'load'
+E   ============================================================
+______________ TestCreateTask.test_required_validation[chromium] ______________
+tests\common\test_web_owner_task.py:84: in test_required_validation
+    login_as_owner(page)
+tests\common\test_web_owner_task.py:35: in login_as_owner
+    page.wait_for_url(f"{BASE}/datasets", timeout=5000)
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\sync_api\_generated.py:9766: in wait_for_url
+    self._sync(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_page.py:585: in wait_for_url
+    return await self._main_frame.wait_for_url(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:266: in wait_for_url
+    async with self.expect_navigation(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_event_context_manager.py:33: in __aexit__
+    await self._future
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:242: in continuation
+    event = await waiter.result()
+            ^^^^^^^^^^^^^^^^^^^^^
+E   playwright._impl._errors.TimeoutError: Timeout 5000ms exceeded.
+E   =========================== logs ===========================
+E   waiting for navigation to "http://localhost:5173/datasets" until 'load'
+E   ============================================================
+_________________ TestStatusFlow.test_status_filter[chromium] _________________
+tests\common\test_web_owner_task.py:95: in test_status_filter
+    login_as_owner(page)
+tests\common\test_web_owner_task.py:35: in login_as_owner
+    page.wait_for_url(f"{BASE}/datasets", timeout=5000)
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\sync_api\_generated.py:9766: in wait_for_url
+    self._sync(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_page.py:585: in wait_for_url
+    return await self._main_frame.wait_for_url(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:266: in wait_for_url
+    async with self.expect_navigation(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_event_context_manager.py:33: in __aexit__
+    await self._future
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:242: in continuation
+    event = await waiter.result()
+            ^^^^^^^^^^^^^^^^^^^^^
+E   playwright._impl._errors.TimeoutError: Timeout 5000ms exceeded.
+E   =========================== logs ===========================
+E   waiting for navigation to "http://localhost:5173/datasets" until 'load'
+E   ============================================================
+__________ TestMobileResponsive.test_mobile_hides_columns[chromium] ___________
+tests\common\test_web_owner_task.py:109: in test_mobile_hides_columns
+    login_as_owner(page)
+tests\common\test_web_owner_task.py:35: in login_as_owner
+    page.wait_for_url(f"{BASE}/datasets", timeout=5000)
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\sync_api\_generated.py:9766: in wait_for_url
+    self._sync(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_page.py:585: in wait_for_url
+    return await self._main_frame.wait_for_url(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:266: in wait_for_url
+    async with self.expect_navigation(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_event_context_manager.py:33: in __aexit__
+    await self._future
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:242: in continuation
+    event = await waiter.result()
+            ^^^^^^^^^^^^^^^^^^^^^
+E   playwright._impl._errors.TimeoutError: Timeout 5000ms exceeded.
+E   =========================== logs ===========================
+E   waiting for navigation to "http://localhost:5173/datasets" until 'load'
+E   ============================================================
+__________ TestMobileResponsive.test_mobile_detail_button[chromium] ___________
+tests\common\test_web_owner_task.py:121: in test_mobile_detail_button
+    login_as_owner(page)
+tests\common\test_web_owner_task.py:35: in login_as_owner
+    page.wait_for_url(f"{BASE}/datasets", timeout=5000)
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\sync_api\_generated.py:9766: in wait_for_url
+    self._sync(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_page.py:585: in wait_for_url
+    return await self._main_frame.wait_for_url(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:266: in wait_for_url
+    async with self.expect_navigation(
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_event_context_manager.py:33: in __aexit__
+    await self._future
+E:\ProfessionalSF\miniconda\Lib\site-packages\playwright\_impl\_frame.py:242: in continuation
+    event = await waiter.result()
+            ^^^^^^^^^^^^^^^^^^^^^
+E   playwright._impl._errors.TimeoutError: Timeout 5000ms exceeded.
+E   =========================== logs ===========================
+E   waiting for navigation to "http://localhost:5173/datasets" until 'load'
+E   ============================================================
+_____________________ TestBatchReview.test_batch_approve ______________________
+tests\tasks\test_human_review.py:36: in test_batch_approve
+    svc.review_result(
+E   TypeError: TaskService.review_result() got an unexpected keyword argument 'status'
+_______________ TestBatchReview.test_batch_reject_needs_comment _______________
+tests\tasks\test_human_review.py:66: in test_batch_reject_needs_comment
+    svc.review_result(
+E   TypeError: TaskService.review_result() got an unexpected keyword argument 'status'
+______________________ TestAuditLog.test_audit_on_review ______________________
+tests\tasks\test_human_review.py:100: in test_audit_on_review
+    svc.review_result(
+E   TypeError: TaskService.review_result() got an unexpected keyword argument 'status'
+______________________ TestAuditLog.test_audit_on_reject ______________________
+tests\tasks\test_human_review.py:136: in test_audit_on_reject
+    svc.review_result(
+E   TypeError: TaskService.review_result() got an unexpected keyword argument 'status'
+__________________ TestAuditLog.test_audit_filtered_by_task ___________________
+tests\tasks\test_human_review.py:163: in test_audit_filtered_by_task
+    svc.review_result(
+E   TypeError: TaskService.review_result() got an unexpected keyword argument 'status'
+_____________________ TestMyResultsAndStats.test_my_stats _____________________
+tests\tasks\test_labeling_workbench.py:269: in test_my_stats
+    assert stats["labeled"] == 2
+           ^^^^^^^^^^^^^^^^
+E   KeyError: 'labeled'
+_______________ TestMyResultsAndStats.test_unclaimed_task_stats _______________
+tests\tasks\test_labeling_workbench.py:280: in test_unclaimed_task_stats
+    assert stats["labeled"] == 0
+           ^^^^^^^^^^^^^^^^
+E   KeyError: 'labeled'
+________ TestListTaskItems.test_returns_items_regardless_of_labeler_id ________
+tests\tasks\test_task_items.py:24: in test_returns_items_regardless_of_labeler_id
+    assert len(items) == 3, f"Expected 3 items, got {len(items)}"
+E   AssertionError: Expected 3 items, got 0
+E   assert 0 == 3
+E    +  where 0 = len([])
+_________________ TestListTaskItems.test_last_result_included _________________
+tests\tasks\test_task_items.py:37: in test_last_result_included
+    assert len(has_result) > 0, "Should have items with last_result"
+E   AssertionError: Should have items with last_result
+E   assert 0 > 0
+E    +  where 0 = len([])
+============================== warnings summary ===============================
+E:\ProfessionalSF\miniconda\Lib\site-packages\fastapi\testclient.py:1
+  E:\ProfessionalSF\miniconda\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+E:\ProfessionalSF\miniconda\Lib\site-packages\pydantic\_internal\_config.py:323
+  E:\ProfessionalSF\miniconda\Lib\site-packages\pydantic\_internal\_config.py:323: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/common/test_web_owner_task.py::TestPageAccess::test_tasks_page_accessible[chromium]
+FAILED tests/common/test_web_owner_task.py::TestPageAccess::test_empty_state_shown[chromium]
+FAILED tests/common/test_web_owner_task.py::TestCreateTask::test_create_drawer_opens[chromium]
+FAILED tests/common/test_web_owner_task.py::TestCreateTask::test_create_drawer_cancel[chromium]
+FAILED tests/common/test_web_owner_task.py::TestCreateTask::test_strategy_switches_assignee[chromium]
+FAILED tests/common/test_web_owner_task.py::TestCreateTask::test_required_validation[chromium]
+FAILED tests/common/test_web_owner_task.py::TestStatusFlow::test_status_filter[chromium]
+FAILED tests/common/test_web_owner_task.py::TestMobileResponsive::test_mobile_hides_columns[chromium]
+FAILED tests/common/test_web_owner_task.py::TestMobileResponsive::test_mobile_detail_button[chromium]
+FAILED tests/tasks/test_human_review.py::TestBatchReview::test_batch_approve
+FAILED tests/tasks/test_human_review.py::TestBatchReview::test_batch_reject_needs_comment
+FAILED tests/tasks/test_human_review.py::TestAuditLog::test_audit_on_review
+FAILED tests/tasks/test_human_review.py::TestAuditLog::test_audit_on_reject
+FAILED tests/tasks/test_human_review.py::TestAuditLog::test_audit_filtered_by_task
+FAILED tests/tasks/test_labeling_workbench.py::TestMyResultsAndStats::test_my_stats
+FAILED tests/tasks/test_labeling_workbench.py::TestMyResultsAndStats::test_unclaimed_task_stats
+FAILED tests/tasks/test_task_items.py::TestListTaskItems::test_returns_items_regardless_of_labeler_id
+FAILED tests/tasks/test_task_items.py::TestListTaskItems::test_last_result_included
+=========== 18 failed, 122 passed, 2 warnings in 106.81s (0:01:46) ============

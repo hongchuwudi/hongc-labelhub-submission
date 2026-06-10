@@ -1,0 +1,191 @@
+[
+  {
+    "id": "getting-started",
+    "icon": "home",
+    "title": "快速入门",
+    "sections": [
+      {
+        "id": "intro",
+        "title": "平台简介",
+        "file": "getting-started/intro.md"
+      },
+      {
+        "id": "roles",
+        "title": "角色与权限",
+        "file": "getting-started/roles.md"
+      },
+      {
+        "id": "workflow",
+        "title": "工作流概览",
+        "file": "getting-started/workflow.md"
+      }
+    ]
+  },
+  {
+    "id": "schema-designer",
+    "icon": "layout",
+    "title": "Schema 设计器",
+    "sections": [
+      {
+        "id": "sd-overview",
+        "title": "功能概述",
+        "file": "schema-designer/overview.md"
+      },
+      {
+        "id": "sd-palette",
+        "title": "物料面板",
+        "file": "schema-designer/palette.md"
+      },
+      {
+        "id": "sd-canvas",
+        "title": "画布操作",
+        "file": "schema-designer/canvas.md"
+      },
+      {
+        "id": "sd-props",
+        "title": "属性配置",
+        "file": "schema-designer/props.md"
+      },
+      {
+        "id": "sd-validation",
+        "title": "校验规则",
+        "file": "schema-designer/validation.md"
+      },
+      {
+        "id": "sd-linkage",
+        "title": "字段联动",
+        "file": "schema-designer/linkage.md"
+      },
+      {
+        "id": "sd-groups-tabs",
+        "title": "分组容器与 Tab",
+        "file": "schema-designer/groups-tabs.md"
+      },
+      {
+        "id": "sd-preview",
+        "title": "预览与 JSON 视图",
+        "file": "schema-designer/preview.md"
+      },
+      {
+        "id": "sd-version",
+        "title": "版本管理",
+        "file": "schema-designer/version.md"
+      }
+    ]
+  },
+  {
+    "id": "task-management",
+    "icon": "file",
+    "title": "任务管理",
+    "sections": [
+      {
+        "id": "tm-create",
+        "title": "创建任务",
+        "file": "task-management/create.md"
+      },
+      {
+        "id": "tm-strategy",
+        "title": "分发策略",
+        "file": "task-management/strategy.md"
+      },
+      {
+        "id": "tm-status",
+        "title": "任务状态",
+        "file": "task-management/status.md"
+      }
+    ]
+  },
+  {
+    "id": "labeling-workbench",
+    "icon": "edit",
+    "title": "标注工作台",
+    "sections": [
+      {
+        "id": "lw-square",
+        "title": "任务大厅",
+        "file": "labeling-workbench/square.md"
+      },
+      {
+        "id": "lw-claim",
+        "title": "认领任务",
+        "file": "labeling-workbench/claim.md"
+      },
+      {
+        "id": "lw-workbench",
+        "title": "标注界面",
+        "file": "labeling-workbench/workbench.md"
+      },
+      {
+        "id": "lw-autosave",
+        "title": "草稿自动保存",
+        "file": "labeling-workbench/autosave.md"
+      }
+    ]
+  },
+  {
+    "id": "ai-review",
+    "icon": "cpu",
+    "title": "AI 预审 Agent",
+    "sections": [
+      {
+        "id": "ai-config",
+        "title": "配置 AI Agent",
+        "file": "ai-review/config.md"
+      },
+      {
+        "id": "ai-flow",
+        "title": "预审流程",
+        "file": "ai-review/flow.md"
+      },
+      {
+        "id": "ai-dimensions",
+        "title": "评分维度",
+        "file": "ai-review/dimensions.md"
+      }
+    ]
+  },
+  {
+    "id": "human-review",
+    "icon": "check",
+    "title": "人工审核流转",
+    "sections": [
+      {
+        "id": "hr-flow",
+        "title": "审核流程",
+        "file": "human-review/flow.md"
+      },
+      {
+        "id": "hr-batch",
+        "title": "批量操作",
+        "file": "human-review/batch.md"
+      },
+      {
+        "id": "hr-audit",
+        "title": "审计追溯",
+        "file": "human-review/audit.md"
+      }
+    ]
+  },
+  {
+    "id": "data-export",
+    "icon": "download",
+    "title": "数据导出",
+    "sections": [
+      {
+        "id": "de-formats",
+        "title": "导出格式",
+        "file": "data-export/formats.md"
+      },
+      {
+        "id": "de-mapping",
+        "title": "字段映射",
+        "file": "data-export/mapping.md"
+      },
+      {
+        "id": "de-async",
+        "title": "异步导出",
+        "file": "data-export/async.md"
+      }
+    ]
+  }
+]

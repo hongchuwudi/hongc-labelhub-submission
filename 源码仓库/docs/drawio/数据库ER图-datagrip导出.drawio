@@ -1,0 +1,175 @@
+<mxfile host="Electron">
+  <diagram id="I6_I1LyvCJUS5yWF_8Du" name="第 1 页">
+    <mxGraphModel dx="3370" dy="2560" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="node4" parent="1" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=2;fillColor=#F3E8FF;strokeColor=#8b5cf6;arcSize=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ai_agent_configs&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; name  /* 配置名称，如「通用文本分类审核」 */: varchar(100)&lt;br/&gt; system_prompt  /* System Prompt 模板 */: text&lt;br/&gt; scoring_dimensions  /* 评分维度定义，如 [{&amp;quot;name&amp;quot;:&amp;quot;relevance&amp;quot;,&amp;quot;label&amp;quot;:&amp;quot;相关性&amp;quot;,&amp;quot;weight&amp;quot;:0.4}, ...] */: json&lt;br/&gt; llm_model  /* 使用的 LLM 模型标识 */: varchar(100)&lt;br/&gt; created_by  /* 创建者 ID */: int&lt;br/&gt; created_at  /* 创建时间 */: datetime&lt;br/&gt; updated_at  /* 最近更新时间 */: datetime&lt;br/&gt; agent_user_id: int&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id  /* 自增主键 */: int&lt;/p&gt;" vertex="1">
+          <mxGeometry height="256" width="385" x="1259" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="node5" parent="1" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=2;fillColor=#F3E8FF;strokeColor=#8b5cf6;arcSize=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ai_agents&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; name  /* Agent 名称 */: varchar(100)&lt;br/&gt; email  /* 邮箱 */: varchar(200)&lt;br/&gt; password_hash  /* 密码哈希 */: varchar(200)&lt;br/&gt; system_prompt  /* System Prompt 模板 */: text&lt;br/&gt; scoring_dimensions  /* 评分维度 */: json&lt;br/&gt; llm_model  /* LLM 模型 */: varchar(100)&lt;br/&gt; created_by: int&lt;br/&gt; created_at: datetime&lt;br/&gt; updated_at: datetime&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id: int&lt;/p&gt;" vertex="1">
+          <mxGeometry height="280" width="286" x="1088" y="564" as="geometry" />
+        </mxCell>
+        <mxCell id="node2" parent="1" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=2;fillColor=#F9FAFB;strokeColor=#9ca3af;arcSize=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;audit_logs&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; actor_id  /* 操作者用户 ID */: int&lt;br/&gt; actor_name  /* 操作者姓名（冗余，方便查询） */: varchar(100)&lt;br/&gt; actor_role  /* 操作者角色 */: varchar(20)&lt;br/&gt; entity_type  /* 实体类型: LabelResult / TaskItem / LabelTask */: varchar(30)&lt;br/&gt; entity_id  /* 实体 ID */: int&lt;br/&gt; task_id  /* 所属任务——级联删除 */: int&lt;br/&gt; action  /* 动作: submit / skip / approve / reject / publish / pause / end */: varchar(30)&lt;br/&gt; from_status  /* 变更前状态 */: varchar(20)&lt;br/&gt; to_status  /* 变更后状态 */: varchar(20)&lt;br/&gt; detail  /* 备注: 驳回理由 / AI 评分摘要等 */: text&lt;br/&gt; created_at  /* 记录时间 */: datetime&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id: int&lt;/p&gt;" vertex="1">
+          <mxGeometry height="328" width="423" x="160" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="node10" parent="1" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=2;fillColor=#F0FDF4;strokeColor=#10b981;arcSize=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;dataset_items&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; dataset_id  /* 所属数据集 ID */: int&lt;br/&gt; index  /* 在数据集中的序号（从 0 开始） */: int&lt;br/&gt; data  /* 原始数据内容，如 {&amp;#39;text&amp;#39;: &amp;#39;...&amp;#39;, &amp;#39;image_url&amp;#39;: &amp;#39;...&amp;#39;} */: json&lt;br/&gt; created_at  /* 创建时间 */: datetime&lt;br/&gt; updated_at  /* 最近更新时间 */: datetime&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id  /* 自增主键 */: int&lt;/p&gt;" vertex="1">
+          <mxGeometry height="184" width="338" x="-318" y="612" as="geometry" />
+        </mxCell>
+        <mxCell id="node0" parent="1" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=2;fillColor=#F0FDF4;strokeColor=#10b981;arcSize=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;datasets&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; name  /* 数据集名称，如「图片分类样本 v1」 */: varchar(100)&lt;br/&gt; description  /* 数据集描述说明 */: text&lt;br/&gt; format  /* 数据文件格式：json / jsonl / csv / excel */: enum(&amp;#39;json&amp;#39;, &amp;#39;jsonl&amp;#39;, &amp;#39;csv&amp;#39;, &amp;#39;excel&amp;#39;)&lt;br/&gt; item_count  /* 数据条目总数（如 1000 条文本） */: int&lt;br/&gt; owner_id  /* 数据集创建者（Owner）的用户 ID */: int&lt;br/&gt; created_at  /* 创建时间 */: datetime&lt;br/&gt; updated_at  /* 最近更新时间 */: datetime&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id  /* 自增主键 */: int&lt;/p&gt;" vertex="1">
+          <mxGeometry height="232" width="485" x="-331" y="-272" as="geometry" />
+        </mxCell>
+        <mxCell id="node3" parent="1" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=2;fillColor=#F9FAFB;strokeColor=#9ca3af;arcSize=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;export_jobs&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; task_id  /* 所属任务 */: int&lt;br/&gt; requested_by  /* 发起导出的 Owner ID */: int&lt;br/&gt; format  /* json / jsonl / csv / xlsx */: varchar(10)&lt;br/&gt; status  /* pending / processing / done / failed */: varchar(20)&lt;br/&gt; file_path  /* 导出文件路径 */: varchar(500)&lt;br/&gt; file_name  /* 下载显示文件名 */: varchar(200)&lt;br/&gt; field_mapping  /* JSON 字符串: {fields:[...], rename:{...}}，为空则全量导出 */: text&lt;br/&gt; error_message  /* 失败原因 */: text&lt;br/&gt; item_count  /* 导出的记录数 */: int&lt;br/&gt; created_at: datetime&lt;br/&gt; finished_at: datetime&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id: int&lt;/p&gt;" vertex="1">
+          <mxGeometry height="328" width="396" x="873" y="1440" as="geometry" />
+        </mxCell>
+        <mxCell id="node7" parent="1" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=2;fillColor=#DBEAFE;strokeColor=#3b82f6;arcSize=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;label_results&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; task_id  /* 所属标注任务 ID */: int&lt;br/&gt; item_id  /* 对应的数据条目 ID（数据集中的一条数据） */: int&lt;br/&gt; labeler_id  /* 标注者 ID：用户 ID 或 AI Agent 标识 */: int&lt;br/&gt; labeler_type  /* 标注者类型：human=人工标注, ai=AI 标注 */: enum(&amp;#39;human&amp;#39;, &amp;#39;ai&amp;#39;)&lt;br/&gt; data  /* 标注结果数据，结构由 Schema 定义 */: json&lt;br/&gt; round  /* 标注轮次：1=初次标注, 2=驳回后修正, 3=再次修正... */: int&lt;br/&gt; status  /* 审核状态：submitted=已提交, approved=审核通过, rejected=审核驳回 */: enum(&amp;#39;submitted&amp;#39;, &amp;#39;approved&amp;#39;, &amp;#39;rejected&amp;#39;)&lt;br/&gt; comment  /* 审核意见，驳回时填写驳回原因 */: varchar(500)&lt;br/&gt; created_at  /* 提交时间 */: datetime&lt;br/&gt; reviewer_id  /* 审核人ID */: int&lt;br/&gt; reviewed_at  /* 审核时间 */: datetime&lt;br/&gt; ai_scores  /* AI评分 */: json&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id  /* 自增主键 */: int&lt;/p&gt;" vertex="1">
+          <mxGeometry height="352" width="663" x="540" y="48" as="geometry" />
+        </mxCell>
+        <mxCell id="node8" parent="1" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=2;fillColor=#FEF3C7;strokeColor=#f59e0b;arcSize=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;label_schemas&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; name  /* Schema 名称，如「图片分类标注模板」 */: varchar(100)&lt;br/&gt; version  /* 版本号，每次修改自增，用于追溯历史版本 */: int&lt;br/&gt; schema  /* JSON Schema 定义内容，描述标注表单的字段、类型、校验规则 */: json&lt;br/&gt; created_at  /* 创建时间 */: datetime&lt;br/&gt; updated_at  /* 最近更新时间 */: datetime&lt;br/&gt; owner_id  /* 创建者 ID */: int&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id  /* 自增主键 */: int&lt;/p&gt;" vertex="1">
+          <mxGeometry height="208" width="446" x="1188" y="1140" as="geometry" />
+        </mxCell>
+        <mxCell id="node1" parent="1" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=3;fillColor=#DBEAFE;strokeColor=#3b82f6;arcSize=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;label_tasks&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; dataset_id  /* 所属数据集 ID */: int&lt;br/&gt; schema_id  /* 使用的标注 Schema ID */: int&lt;br/&gt; assignee_id: int&lt;br/&gt; assignee_type  /* 执行者类型：labeler=人工标注员, ai_agent=AI 自动标注 */: enum(&amp;#39;labeler&amp;#39;, &amp;#39;ai_agent&amp;#39;)&lt;br/&gt; status  /* 任务状态 */: enum(&amp;#39;draft&amp;#39;, &amp;#39;published&amp;#39;, &amp;#39;paused&amp;#39;, &amp;#39;ended&amp;#39;)&lt;br/&gt; total_items  /* 任务分配的总条目数 */: int&lt;br/&gt; completed_items  /* 已完成标注的条目数 */: int&lt;br/&gt; created_at  /* 任务创建时间 */: datetime&lt;br/&gt; updated_at  /* 最近更新时间 */: datetime&lt;br/&gt; title  /* 任务标题 */: varchar(200)&lt;br/&gt; description  /* 任务描述 */: text&lt;br/&gt; tags  /* 标签 */: varchar(500)&lt;br/&gt; owner_id  /* 创建者ID */: int&lt;br/&gt; deadline  /* 截止时间 */: datetime&lt;br/&gt; quota  /* 配额 */: int&lt;br/&gt; distribution_strategy  /* 分发策略 */: enum(&amp;#39;first_come&amp;#39;, &amp;#39;assigned&amp;#39;, &amp;#39;quota_grab&amp;#39;)&lt;br/&gt; reward_per_item  /* 每条奖励金额（元） */: float&lt;br/&gt; reward_cap  /* 月度奖励封顶（元） */: float&lt;br/&gt; ai_config_id: int&lt;br/&gt; grab_limit  /* 配额抢单每人最大认领数 */: int&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id  /* 自增主键 */: int&lt;/p&gt;" vertex="1">
+          <mxGeometry height="544" width="572" x="85" y="432" as="geometry" />
+        </mxCell>
+        <mxCell id="node6" parent="1" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=2;fillColor=#DBEAFE;strokeColor=#3b82f6;arcSize=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;task_items&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; task_id: int&lt;br/&gt; dataset_item_id: int&lt;br/&gt; status  /* pending/labeled/skipped */: varchar(20)&lt;br/&gt; labeler_id  /* 完成标注的用户 ID */: int&lt;br/&gt; created_at: datetime&lt;br/&gt; updated_at: datetime&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id: int&lt;/p&gt;" vertex="1">
+          <mxGeometry height="208" width="297" x="-117" y="1500" as="geometry" />
+        </mxCell>
+        <mxCell id="node9" parent="1" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=2;fillColor=#EEF2FF;strokeColor=#4f46e5;arcSize=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;users&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; name  /* 用户显示名称 */: varchar(50)&lt;br/&gt; role  /* 角色 */: enum(&amp;#39;owner&amp;#39;, &amp;#39;labeler&amp;#39;, &amp;#39;reviewer&amp;#39;, &amp;#39;ai_agent&amp;#39;)&lt;br/&gt; email  /* 登录邮箱，全局唯一 */: varchar(100)&lt;br/&gt; password_hash  /* 密码哈希值（bcrypt） */: varchar(255)&lt;br/&gt; created_at  /* 账号创建时间 */: datetime&lt;br/&gt; updated_at  /* 最近更新时间 */: datetime&lt;br/&gt; avatar  /* 头像URL */: varchar(255)&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; id  /* 自增主键 */: int&lt;/p&gt;" vertex="1">
+          <mxGeometry height="232" width="370" x="686" y="-272" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="node4" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#8b5cf6;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.700;entryY=1.000;entryDx=0;entryDy=0;" target="node9" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1451" y="4" />
+              <mxPoint x="1231" y="4" />
+              <mxPoint x="1231" y="-16" />
+              <mxPoint x="945" y="-16" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label26" connectable="0" parent="edge4" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=#8b5cf6;" value="created_by:id" vertex="1">
+          <mxGeometry x="1154" y="-6" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="node5" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#8b5cf6;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.700;entryY=1.000;entryDx=0;entryDy=0;" target="node9" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1231" y="-16" />
+              <mxPoint x="945" y="-16" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label32" connectable="0" parent="edge5" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=#8b5cf6;" value="created_by:id" vertex="1">
+          <mxGeometry x="1050" y="-36" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="node2" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#9ca3af;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;" target="node1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label14" connectable="0" parent="edge2" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=#9ca3af;" value="task_id:id" vertex="1">
+          <mxGeometry x="314" y="1018" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" edge="1" parent="1" source="node10" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#10b981;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;" target="node0" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="-149" y="404" />
+              <mxPoint x="-89" y="404" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label2" connectable="0" parent="edge0" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=#10b981;" value="dataset_id:id" vertex="1">
+          <mxGeometry x="-224" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="edge11" edge="1" parent="1" source="node3" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#9ca3af;exitX=0.250;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;" target="node1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="972" y="1064" />
+              <mxPoint x="371" y="1064" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label68" connectable="0" parent="edge11" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=#9ca3af;" value="task_id:id" vertex="1">
+          <mxGeometry x="643" y="1044" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="node3" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#9ca3af;exitX=0.750;exitY=0.000;exitDx=0;exitDy=0;entryX=0.900;entryY=1.000;entryDx=0;entryDy=0;" target="node9" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1170" y="1124" />
+              <mxPoint x="1671" y="1124" />
+              <mxPoint x="1671" y="24" />
+              <mxPoint x="1019" y="24" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label50" connectable="0" parent="edge8" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=#9ca3af;" value="requested_by:id" vertex="1">
+          <mxGeometry x="1579" y="564" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="node7" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#3b82f6;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;" target="node9" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label38" connectable="0" parent="edge6" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=#3b82f6;" value="reviewer_id:id" vertex="1">
+          <mxGeometry x="791" y="-6" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="node1" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#3b82f6;exitX=0.250;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;" target="node0" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="228" y="404" />
+              <mxPoint x="-89" y="404" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label8" connectable="0" parent="edge1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=#3b82f6;" value="dataset_id:id" vertex="1">
+          <mxGeometry x="111" y="384" as="geometry" />
+        </mxCell>
+        <mxCell id="edge10" edge="1" parent="1" source="node1" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#3b82f6;exitX=0.750;exitY=0.000;exitDx=0;exitDy=0;entryX=0.300;entryY=1.000;entryDx=0;entryDy=0;" target="node9" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="514" y="24" />
+              <mxPoint x="797" y="24" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label62" connectable="0" parent="edge10" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=#3b82f6;" value="owner_id:id" vertex="1">
+          <mxGeometry x="446" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" edge="1" parent="1" source="node6" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#3b82f6;exitX=0.167;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;" target="node10" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="-68" y="1464" />
+              <mxPoint x="-149" y="1464" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label56" connectable="0" parent="edge9" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=#3b82f6;" value="dataset_item_id:id" vertex="1">
+          <mxGeometry x="-174" y="1472" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="node6" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#3b82f6;exitX=0.833;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;" target="node1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="1064" />
+              <mxPoint x="371" y="1064" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label20" connectable="0" parent="edge3" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=#3b82f6;" value="task_id:id" vertex="1">
+          <mxGeometry x="222" y="1044" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="node6" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=none;endArrow=block;endSize=12;strokeColor=#3b82f6;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.100;entryY=1.000;entryDx=0;entryDy=0;" target="node9" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="31" y="1464" />
+              <mxPoint x="51" y="1464" />
+              <mxPoint x="51" y="4" />
+              <mxPoint x="723" y="4" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label44" connectable="0" parent="edge7" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;strokeColor=#3b82f6;" value="labeler_id:id" vertex="1">
+          <mxGeometry x="-21" y="967" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

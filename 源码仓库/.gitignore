@@ -1,0 +1,58 @@
+# ── 文档 ──
+docs/LabelHub 数据标注平台 · AI全栈课题实现要求.pdf
+docs/temp/
+docs/datasets/
+# ── 依赖 ──
+frontend/node_modules/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# ── 构建产物 ──
+frontend/dist/
+frontend/dist-ssr/
+*.log
+
+# ── 环境变量 ──
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+
+# ── IDE ──
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── OS ──
+.DS_Store
+Thumbs.db
+
+# ── 测试 & 覆盖率 ──
+.pytest_cache/
+.coverage
+coverage/
+htmlcov/
+
+# ── 数据 & 上传 ──
+data/
+uploads/
+media/
+
+# ── 临时文件 ──
+*.tmp
+*.bak
+*.bkp
+*.orig
+
+# ── 数据库 ──
+*.db
+*.sqlite
+
+# ── 脚本输出 ──
+scripts/sql/*.sql
+
+# ── 提交物 ──
+submission/

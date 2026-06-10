@@ -1,0 +1,46 @@
+/* ================================================================
+   ANT DESIGN OVERRIDES
+   ================================================================ */
+
+/* Table */
+.ant-table-wrapper .ant-table-thead > tr > th {
+  background: #f9fafb;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ant-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Card */
+.ant-card {
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+}
+.ant-card-bordered {
+  border-color: var(--border-color);
+}
+
+/* Drawer close button size on mobile */
+.ant-drawer .ant-drawer-close {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+@media (max-width: 640px) {
+  .ant-table-wrapper .ant-table-thead > tr > th {
+    font-size: 11px;
+    padding: 10px 12px;
+  }
+  .ant-table-wrapper .ant-table-tbody > tr > td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}

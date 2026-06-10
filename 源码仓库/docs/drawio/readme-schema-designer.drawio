@@ -1,0 +1,131 @@
+<mxfile host="Electron">
+  <diagram id="pajRwtDNBjZiYWtZ4Bzv" name="第 1 页">
+    <mxGraphModel dx="2240" dy="1031" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0" adaptiveColors="auto">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#1677FF;" value="Schema Designer — 可视化表单搭建器" vertex="1">
+          <mxGeometry height="40" width="500" x="170" y="372" as="geometry" />
+        </mxCell>
+        <mxCell id="palette-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F4FF;strokeColor=#1677FF;strokeWidth=2;verticalAlign=top;fontSize=13;fontColor=#1677FF;align=center;spacingTop=8;" value="&lt;b&gt;📦 物料面板 (Palette)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="410" width="200" y="422" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;spacingLeft=4;" value="单行文本 TextInput" vertex="1">
+          <mxGeometry height="26" width="180" x="10" y="462" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;spacingLeft=4;" value="多行文本 TextArea" vertex="1">
+          <mxGeometry height="26" width="180" x="10" y="494" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;spacingLeft=4;" value="单选 RadioGroup" vertex="1">
+          <mxGeometry height="26" width="180" x="10" y="526" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;spacingLeft=4;" value="多选 CheckboxGroup" vertex="1">
+          <mxGeometry height="26" width="180" x="10" y="558" as="geometry" />
+        </mxCell>
+        <mxCell id="p5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;spacingLeft=4;" value="标签选择 TagSelect" vertex="1">
+          <mxGeometry height="26" width="180" x="10" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="p6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;spacingLeft=4;" value="文件上传 FileUpload" vertex="1">
+          <mxGeometry height="26" width="180" x="10" y="622" as="geometry" />
+        </mxCell>
+        <mxCell id="p7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;spacingLeft=4;" value="富文本 RichText" vertex="1">
+          <mxGeometry height="26" width="180" x="10" y="654" as="geometry" />
+        </mxCell>
+        <mxCell id="p8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;spacingLeft=4;" value="JSON 编辑器 JsonEditor" vertex="1">
+          <mxGeometry height="26" width="180" x="10" y="686" as="geometry" />
+        </mxCell>
+        <mxCell id="p9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#FA8C16;spacingLeft=4;fontColor=#D4380D;" value="LLM 交互组件" vertex="1">
+          <mxGeometry height="26" width="180" x="10" y="718" as="geometry" />
+        </mxCell>
+        <mxCell id="p10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F6FFED;strokeColor=#52C41A;spacingLeft=4;fontColor=#389E0D;" value="展示组件 ShowItem" vertex="1">
+          <mxGeometry height="26" width="180" x="10" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="p-drag-hint" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#8C8C8C;fontStyle=2;" value="⬅️ 拖拽到画布" vertex="1">
+          <mxGeometry height="20" width="180" x="10" y="792" as="geometry" />
+        </mxCell>
+        <mxCell id="canvas-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#D9D9D9;strokeWidth=2;verticalAlign=top;fontSize=13;fontColor=#262626;align=center;spacingTop=8;dashed=0;" value="&lt;b&gt;🎨 中间画布 (Canvas)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="410" width="500" x="270" y="422" as="geometry" />
+        </mxCell>
+        <mxCell id="c-tabs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;spacingLeft=8;fontSize=11;" value="Tab 1&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tab 2&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;+ Tab" vertex="1">
+          <mxGeometry height="30" width="200" x="290" y="462" as="geometry" />
+        </mxCell>
+        <mxCell id="c-group1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;dashed=1;verticalAlign=top;fontSize=11;spacingTop=4;" value="&lt;b&gt;📦 分组: 基本信息&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="460" x="290" y="507" as="geometry" />
+        </mxCell>
+        <mxCell id="c-f1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E6F4FF;strokeColor=#1677FF;spacingLeft=4;fontSize=10;" value="姓名 (单行文本)" vertex="1">
+          <mxGeometry height="26" width="130" x="300" y="537" as="geometry" />
+        </mxCell>
+        <mxCell id="c-f2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E6F4FF;strokeColor=#1677FF;spacingLeft=4;fontSize=10;" value="年龄 (数字)" vertex="1">
+          <mxGeometry height="26" width="100" x="440" y="537" as="geometry" />
+        </mxCell>
+        <mxCell id="c-f3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E6F4FF;strokeColor=#1677FF;spacingLeft=4;fontSize=10;" value="性别 (单选)" vertex="1">
+          <mxGeometry height="26" width="100" x="550" y="537" as="geometry" />
+        </mxCell>
+        <mxCell id="c-f4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E6F4FF;strokeColor=#1677FF;spacingLeft=4;fontSize=10;" value="简介 (多行文本)" vertex="1">
+          <mxGeometry height="26" width="130" x="300" y="577" as="geometry" />
+        </mxCell>
+        <mxCell id="c-group2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;dashed=1;verticalAlign=top;fontSize=11;spacingTop=4;" value="&lt;b&gt;📦 分组: 详细资料&lt;/b&gt;" vertex="1">
+          <mxGeometry height="100" width="460" x="290" y="642" as="geometry" />
+        </mxCell>
+        <mxCell id="c-f5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E6F4FF;strokeColor=#1677FF;spacingLeft=4;fontSize=10;" value="特长 (多选)" vertex="1">
+          <mxGeometry height="26" width="130" x="300" y="672" as="geometry" />
+        </mxCell>
+        <mxCell id="c-f6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E6F4FF;strokeColor=#1677FF;spacingLeft=4;fontSize=10;" value="作品链接 (文件上传)" vertex="1">
+          <mxGeometry height="26" width="180" x="440" y="672" as="geometry" />
+        </mxCell>
+        <mxCell id="c-unalloc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#FA8C16;fontSize=10;spacingLeft=4;" value="未分配区域: 标签 (多选)" vertex="1">
+          <mxGeometry height="26" width="200" x="290" y="762" as="geometry" />
+        </mxCell>
+        <mxCell id="c-tools" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=10;fontColor=#8C8C8C;" value="[+Tab] [+分组] [预览 Schema] [导入]" vertex="1">
+          <mxGeometry height="30" width="200" x="550" y="757" as="geometry" />
+        </mxCell>
+        <mxCell id="prop-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F5FF;strokeColor=#1677FF;strokeWidth=2;verticalAlign=top;fontSize=13;fontColor=#1677FF;align=center;spacingTop=8;" value="&lt;b&gt;⚙️ 属性面板 (PropertyEditor)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="410" width="280" x="840" y="422" as="geometry" />
+        </mxCell>
+        <mxCell id="prop-selected" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=11;fontColor=#262626;spacingLeft=4;" value="已选中: 姓名 (单行文本)" vertex="1">
+          <mxGeometry height="26" width="250" x="855" y="462" as="geometry" />
+        </mxCell>
+        <mxCell id="prop-key" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=10;spacingLeft=4;" value="字段标识: name" vertex="1">
+          <mxGeometry height="26" width="250" x="855" y="498" as="geometry" />
+        </mxCell>
+        <mxCell id="prop-title" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=10;spacingLeft=4;" value="显示标题: 姓名" vertex="1">
+          <mxGeometry height="26" width="250" x="855" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="prop-required" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=10;spacingLeft=4;" value="必填: 是" vertex="1">
+          <mxGeometry height="26" width="250" x="855" y="562" as="geometry" />
+        </mxCell>
+        <mxCell id="prop-placeholder" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=10;spacingLeft=4;" value="占位提示: 请输入姓名" vertex="1">
+          <mxGeometry height="26" width="250" x="855" y="594" as="geometry" />
+        </mxCell>
+        <mxCell id="prop-tab" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=10;spacingLeft=4;" value="所属 Tab: Tab 1" vertex="1">
+          <mxGeometry height="26" width="250" x="855" y="626" as="geometry" />
+        </mxCell>
+        <mxCell id="prop-validation" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=10;spacingLeft=4;" value="校验规则: 最长 20 字符" vertex="1">
+          <mxGeometry height="26" width="250" x="855" y="658" as="geometry" />
+        </mxCell>
+        <mxCell id="prop-action" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#FA8C16;fontSize=10;spacingLeft=4;fontColor=#D4380D;" value="[复制] [删除]" vertex="1">
+          <mxGeometry height="26" width="250" x="855" y="702" as="geometry" />
+        </mxCell>
+        <mxCell id="prop-hint" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#8C8C8C;fontStyle=2;" value="点击字段 → 修改属性 → 实时预览" vertex="1">
+          <mxGeometry height="20" width="250" x="855" y="792" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1" edge="1" parent="1" source="palette-bg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#1677FF;" target="canvas-bg" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1-label" connectable="0" parent="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#1677FF;fontStyle=1;labelBackgroundColor=#FFFFFF;" value="拖拽" vertex="1">
+          <mxGeometry relative="1" x="-0.3" y="-1" as="geometry">
+            <mxPoint x="-20" y="370" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow2" edge="1" parent="1" source="canvas-bg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;strokeColor=#1677FF;" target="prop-bg" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2-label" connectable="0" parent="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#1677FF;fontStyle=1;labelBackgroundColor=#FFFFFF;" value="点击选中" vertex="1">
+          <mxGeometry relative="1" x="-0.3" y="-1" as="geometry">
+            <mxPoint x="-20" y="370" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

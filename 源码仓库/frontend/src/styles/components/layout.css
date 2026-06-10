@@ -1,0 +1,48 @@
+/* ================================================================
+   PAGE CONTENT
+   ================================================================ */
+
+.page-content {
+  padding: 24px 28px;
+  height: calc(100vh - 57px);
+  height: calc(100dvh - 57px);
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .page-content {
+    padding: 20px 16px;
+  }
+}
+
+/* ================================================================
+   PAGE SHELL
+   ================================================================ */
+
+.page-header {
+  margin-bottom: 24px;
+}
+.page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+.page-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .page-header {
+    margin-bottom: 16px;
+  }
+  .page-title {
+    font-size: 18px;
+  }
+  .page-subtitle {
+    font-size: 13px;
+  }
+}
+

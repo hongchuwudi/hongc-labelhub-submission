@@ -1,0 +1,206 @@
+<mxfile host="Electron">
+  <diagram id="b3TPRWigi_2VtoiJSLqI" name="第 1 页">
+    <mxGraphModel dx="1334" dy="973" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0" adaptiveColors="auto">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#262626;" value="LabelHub 工作流概览 — 端到端全流程" vertex="1">
+          <mxGeometry height="40" width="700" x="500" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontColor=#8C8C8C;" value="贯穿 Owner / Labeler / AI Agent / Reviewer 四端角色" vertex="1">
+          <mxGeometry height="20" width="600" x="550" y="102" as="geometry" />
+        </mxCell>
+        <mxCell id="main-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F5FF;strokeColor=#ADCBFF;strokeWidth=2;verticalAlign=top;fontSize=13;fontColor=#1677FF;align=center;spacingTop=6;" value="&lt;b&gt;主线流程&lt;/b&gt;" vertex="1">
+          <mxGeometry height="880" width="500" x="240" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="step1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F4FF;strokeColor=#1677FF;fontSize=11;fontColor=#1677FF;align=center;" value="① [Owner] 创建数据集&amp;nbsp;&amp;nbsp;导入 CSV/JSON/Excel" vertex="1">
+          <mxGeometry height="36" width="380" x="318" y="166" as="geometry" />
+        </mxCell>
+        <mxCell id="step2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F4FF;strokeColor=#1677FF;fontSize=11;fontColor=#1677FF;align=center;" value="② [Owner] Schema Designer&amp;nbsp;&amp;nbsp;拖拽搭建标注模板" vertex="1">
+          <mxGeometry height="36" width="380" x="318" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="step3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F4FF;strokeColor=#1677FF;fontSize=11;fontColor=#1677FF;align=center;" value="③ [Owner] 创建任务 + 选数据集/Schema + 配置策略 + 发布" vertex="1">
+          <mxGeometry height="36" width="380" x="318" y="298" as="geometry" />
+        </mxCell>
+        <mxCell id="step4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F6FFED;strokeColor=#52C41A;fontSize=11;fontColor=#389E0D;align=center;" value="④ [Labeler] 任务大厅浏览 + 认领任务" vertex="1">
+          <mxGeometry height="36" width="380" x="318" y="364" as="geometry" />
+        </mxCell>
+        <mxCell id="step5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F6FFED;strokeColor=#52C41A;fontSize=11;fontColor=#389E0D;align=center;" value="⑤ [Labeler] 标注工作台逐条作答（草稿自动保存）" vertex="1">
+          <mxGeometry height="36" width="380" x="318" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="step6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#FA8C16;fontSize=11;fontColor=#D4380D;align=center;" value="⑥ [Labeler] 提交标注结果" vertex="1">
+          <mxGeometry height="36" width="380" x="318" y="496" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="step1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;strokeColor=#1677FF;" target="step2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="step2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;strokeColor=#1677FF;" target="step3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="step3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;strokeColor=#52C41A;" target="step4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="step4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;strokeColor=#52C41A;" target="step5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="step5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;strokeColor=#FA8C16;" target="step6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="decision" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#FA8C16;fontSize=11;fontColor=#D4380D;" value="是否绑定了 AI Agent？" vertex="1">
+          <mxGeometry height="50" width="240" x="388" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="step6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;strokeColor=#FA8C16;" target="decision" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="no-ai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#BFBFBF;fontSize=10;fontColor=#8C8C8C;align=center;" value="❌ 无 Agent&#xa;直接人工审核" vertex="1">
+          <mxGeometry height="40" width="160" x="318" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="with-ai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F6FFED;strokeColor=#52C41A;fontSize=10;fontColor=#389E0D;align=center;" value="🤖 有 Agent&#xa;进入 AI 预审流水线" vertex="1">
+          <mxGeometry height="40" width="160" x="548" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="e-no-ai" edge="1" parent="1" source="decision" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.3;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#8C8C8C;" target="no-ai" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-with-ai" edge="1" parent="1" source="decision" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.7;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;strokeColor=#52C41A;" target="with-ai" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="step8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#FA8C16;fontSize=11;fontColor=#D4380D;align=center;" value="⑦ [Reviewer] 复审 / 终审" vertex="1">
+          <mxGeometry height="36" width="380" x="318" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="no-ai" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#8C8C8C;" target="step8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8-with" edge="1" parent="1" source="with-ai" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.25;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#FA8C16;fontSize=9;fontColor=#D4380D;" target="step8" value="AI 预审通过">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="step9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F4FF;strokeColor=#1677FF;fontSize=11;fontColor=#1677FF;align=center;" value="⑧ [Owner] 数据看板 + 导出中心下载结果" vertex="1">
+          <mxGeometry height="36" width="380" x="318" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="step8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;strokeColor=#FA8C16;" target="step9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="reject-back" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF1F0;strokeColor=#FF4D4F;fontSize=10;fontColor=#CF1322;align=center;" value="❌ 驳回 → 退回标注员重新标注" vertex="1">
+          <mxGeometry height="30" width="380" x="318" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="e-reject" edge="1" parent="1" source="step8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#FF4D4F;dashed=1;" target="reject-back" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-reject-back" edge="1" parent="1" source="reject-back" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryX=0.5;entryY=1;strokeWidth=1.5;strokeColor=#FF4D4F;dashed=1;" target="step5" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="915" />
+              <mxPoint x="290" y="466" />
+            </Array>
+            <mxPoint x="318" y="915" as="sourcePoint" />
+            <mxPoint x="508" y="466" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ai-detail-bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F6FFED;strokeColor=#73D13D;strokeWidth=2;verticalAlign=top;fontSize=13;fontColor=#389E0D;align=center;spacingTop=6;" value="&lt;b&gt;🤖 AI 预审内部流水线&lt;/b&gt;" vertex="1">
+          <mxGeometry height="880" width="500" x="950" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-step1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=10;spacingLeft=4;" value="1. Labeler 提交 → create_result()" vertex="1">
+          <mxGeometry height="28" width="450" x="980" y="166" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-step2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=10;spacingLeft=4;" value="2. 检测 ai_agent_id → 有则发布 MQ 消息 (labelhub.ai.review)" vertex="1">
+          <mxGeometry height="28" width="450" x="980" y="208" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-step3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=10;spacingLeft=4;" value="3. ai_worker.py — 消费 MQ 消息" vertex="1">
+          <mxGeometry height="28" width="450" x="980" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-step4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=10;spacingLeft=4;" value="4. AgentPool.submit() — 提交到线程池 (ThreadPoolExecutor)" vertex="1">
+          <mxGeometry height="28" width="450" x="980" y="292" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-step5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=10;spacingLeft=4;" value="5. Agent.run() — 查 DB 获取 task + item + result" vertex="1">
+          <mxGeometry height="28" width="450" x="980" y="334" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-step6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=10;spacingLeft=4;" value="6. 构建 Prompt — 替换占位符 + 拼接 dimensions 评分表格" vertex="1">
+          <mxGeometry height="28" width="450" x="980" y="376" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-step7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#FA8C16;fontSize=10;spacingLeft=4;fontColor=#D4380D;" value="7. POST LLM API — temperature=0, Function Calling 结构化输出" vertex="1">
+          <mxGeometry height="28" width="450" x="980" y="418" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-step8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=10;spacingLeft=4;" value="8. Pydantic 校验 — ReviewResult schema，失败则自动重试" vertex="1">
+          <mxGeometry height="28" width="450" x="980" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-step9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F6FFED;strokeColor=#52C41A;fontSize=10;spacingLeft=4;fontColor=#389E0D;" value="9. 写 ai_reviews 表 — 维度分 + 总体分 + 判定 + Prompt 原文" vertex="1">
+          <mxGeometry height="28" width="450" x="980" y="502" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-step10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F6FFED;strokeColor=#52C41A;fontSize=10;spacingLeft=4;fontColor=#389E0D;" value="10. 更新 result.status → review (通过) 或 rejected (打回)" vertex="1">
+          <mxGeometry height="28" width="450" x="980" y="544" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-e1" edge="1" parent="1" source="ai-step1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#52C41A;" target="ai-step2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-e2" edge="1" parent="1" source="ai-step2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#52C41A;" target="ai-step3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-e3" edge="1" parent="1" source="ai-step3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#52C41A;" target="ai-step4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-e4" edge="1" parent="1" source="ai-step4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#52C41A;" target="ai-step5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-e5" edge="1" parent="1" source="ai-step5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#52C41A;" target="ai-step6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-e6" edge="1" parent="1" source="ai-step6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#52C41A;" target="ai-step7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-e7" edge="1" parent="1" source="ai-step7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#52C41A;" target="ai-step8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-e8" edge="1" parent="1" source="ai-step8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#52C41A;" target="ai-step9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-e9" edge="1" parent="1" source="ai-step9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=1.5;strokeColor=#52C41A;" target="ai-step10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-mq" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#FA8C16;fontSize=9;fontColor=#D4380D;align=center;" value="📨 RabbitMQ&#xa;labelhub.ai.review" vertex="1">
+          <mxGeometry height="50" width="80" x="1070" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-llm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#FA8C16;fontSize=9;fontColor=#D4380D;align=center;" value="OpenAI Compatible API&#xa;Function Calling" vertex="1">
+          <mxGeometry height="50" width="80" x="1220" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-verdict" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#FA8C16;fontSize=9;fontColor=#D4380D;" value="判定结果" vertex="1">
+          <mxGeometry height="40" width="80" x="1160" y="594" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-verdict-pass" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F6FFED;strokeColor=#52C41A;fontSize=9;fontColor=#389E0D;align=center;" value="→ review&#xa;(人工复审)" vertex="1">
+          <mxGeometry height="26" width="80" x="1310" y="589" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-verdict-reject" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF1F0;strokeColor=#FF4D4F;fontSize=9;fontColor=#CF1322;align=center;" value="→ rejected&#xa;(打回重标)" vertex="1">
+          <mxGeometry height="26" width="80" x="1310" y="634" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-e-verdict" edge="1" parent="1" source="ai-verdict" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=1.5;strokeColor=#FA8C16;" target="ai-verdict-pass" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-e-verdict2" edge="1" parent="1" source="ai-verdict" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=1.5;strokeColor=#FF4D4F;" target="ai-verdict-reject" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-note1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFBE6;strokeColor=#FFE58F;fontSize=9;fontColor=#AD6800;align=center;" value="线程池并发，零冷启动&#xa;配置热重载" vertex="1">
+          <mxGeometry height="36" width="200" x="970" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-note2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFBE6;strokeColor=#FFE58F;fontSize=9;fontColor=#AD6800;align=center;" value="维度评分:&#xa;相关性 / 准确性 /&#xa;格式合规 / 安全性" vertex="1">
+          <mxGeometry height="50" width="120" x="1200" y="703" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-note3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFBE6;strokeColor=#FFE58F;fontSize=9;fontColor=#AD6800;align=center;" value="MQ 降级:&#xa;不可用时跳过&#xa;标注不受阻" vertex="1">
+          <mxGeometry height="50" width="90" x="1340" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-arch-note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#8C8C8C;fontStyle=2;" value="摒弃 Celery，采用轻量级线程池 + 长生命周期 Agent 实例，状态可观测、配置热重载" vertex="1">
+          <mxGeometry height="20" width="450" x="970" y="776" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-owner" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6F4FF;strokeColor=#1677FF;fontSize=9;fontColor=#1677FF;align=center;" value="Owner 操作" vertex="1">
+          <mxGeometry height="22" width="100" x="970" y="827" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-labeler" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F6FFED;strokeColor=#52C41A;fontSize=9;fontColor=#389E0D;align=center;" value="Labeler 操作" vertex="1">
+          <mxGeometry height="22" width="100" x="1080" y="827" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-reviewer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#FA8C16;fontSize=9;fontColor=#D4380D;align=center;" value="Reviewer 操作" vertex="1">
+          <mxGeometry height="22" width="100" x="1200" y="827" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-ai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D9D9D9;fontSize=9;fontColor=#595959;align=center;" value="AI Agent 操作" vertex="1">
+          <mxGeometry height="22" width="100" x="1320" y="827" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,275 @@
+<mxfile host="LabelHub" modified="2026-06-10T00:00:00.000Z" agent="Claude" version="24.0.0">
+  <diagram name="数据库ER图" id="er-diagram">
+    <mxGraphModel dx="1400" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 标题 -->
+        <mxCell id="title" value="LabelHub 数据库 ER 图 — 12 张核心表" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="400" y="10" width="500" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- users — 核心实体 -->
+        <!-- ============================================================ -->
+        <mxCell id="table-users" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF2FF;strokeColor=#4f46e5;strokeWidth=2;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="50" y="70" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl-users-h" value="users (用户)" style="text;html=1;strokeColor=none;fillColor=#4f46e5;fontSize=11;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="70" width="180" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="users-cols" value="&lt;font color=&quot;#9ca3af&quot;&gt;PK&lt;/font&gt; id&lt;br&gt;name, email, avatar&lt;br&gt;role (owner/labeler/reviewer/ai_agent)&lt;br&gt;password_hash&lt;br&gt;created_at, updated_at" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#1a1a2e;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="53" y="95" width="174" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- datasets -->
+        <!-- ============================================================ -->
+        <mxCell id="table-datasets" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#10b981;strokeWidth=2;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="330" y="70" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl-datasets-h" value="datasets (数据集)" style="text;html=1;strokeColor=none;fillColor=#10b981;fontSize=11;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="70" width="180" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="datasets-cols" value="&lt;font color=&quot;#9ca3af&quot;&gt;PK&lt;/font&gt; id&lt;br&gt;name, description&lt;br&gt;format (json/jsonl/csv/excel)&lt;br&gt;item_count&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; owner_id → users.id&lt;br&gt;created_at, updated_at" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#1a1a2e;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="333" y="95" width="174" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- User → Dataset -->
+        <mxCell id="fk-ud" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-users" target="table-datasets">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- dataset_items -->
+        <!-- ============================================================ -->
+        <mxCell id="table-ditems" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#10b981;strokeWidth=2;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="610" y="70" width="180" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl-ditems-h" value="dataset_items (条目)" style="text;html=1;strokeColor=none;fillColor=#10b981;fontSize=11;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="70" width="180" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="ditems-cols" value="&lt;font color=&quot;#9ca3af&quot;&gt;PK&lt;/font&gt; id&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; dataset_id → datasets.id (CASCADE)&lt;br&gt;index&lt;br&gt;data (JSON)&lt;br&gt;created_at, updated_at" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#1a1a2e;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="613" y="95" width="174" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Dataset → DatasetItem -->
+        <mxCell id="fk-ddi" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-datasets" target="table-ditems">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- label_schemas -->
+        <!-- ============================================================ -->
+        <mxCell id="table-schemas" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#f59e0b;strokeWidth=2;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="330" y="260" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl-schemas-h" value="label_schemas (模板)" style="text;html=1;strokeColor=none;fillColor=#f59e0b;fontSize=11;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="260" width="180" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="schemas-cols" value="&lt;font color=&quot;#9ca3af&quot;&gt;PK&lt;/font&gt; id&lt;br&gt;name, version&lt;br&gt;schema (JSON)&lt;br&gt;version_history (JSON)&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; owner_id → users.id&lt;br&gt;created_at, updated_at" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#1a1a2e;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="333" y="285" width="174" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- User → Schema -->
+        <mxCell id="fk-us" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-users" target="table-schemas">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="140" y="320" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- tasks (核心枢纽) -->
+        <!-- ============================================================ -->
+        <mxCell id="table-tasks" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3b82f6;strokeWidth=3;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="610" y="230" width="210" height="215" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl-tasks-h" value="tasks (任务) ⭐核心枢纽" style="text;html=1;strokeColor=none;fillColor=#3b82f6;fontSize=11;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="230" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="tasks-cols" value="&lt;font color=&quot;#9ca3af&quot;&gt;PK&lt;/font&gt; id&lt;br&gt;title, description, tags&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; dataset_id → datasets.id&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; schema_id → label_schemas.id&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; ai_agent_id → ai_agents.id&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; owner_id → users.id&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; assignee_id → users.id&lt;br&gt;quota, deadline, reward_*&lt;br&gt;distribution_strategy&lt;br&gt;status (draft/pub/paused/ended)&lt;br&gt;total_items, completed_items" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#1a1a2e;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="613" y="255" width="204" height="185" as="geometry" />
+        </mxCell>
+
+        <!-- Dataset → Task -->
+        <mxCell id="fk-dt" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-datasets" target="table-tasks">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="420" y="294" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Schema → Task -->
+        <mxCell id="fk-st" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-schemas" target="table-tasks">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- User(owner) → Task -->
+        <mxCell id="fk-ut" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=0;exitY=0.8;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-users" target="table-tasks">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="50" y="200" /><mxPoint x="50" y="220" /><mxPoint x="715" y="220" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- task_items -->
+        <!-- ============================================================ -->
+        <mxCell id="table-titems" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3b82f6;strokeWidth=2;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="330" y="460" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl-titems-h" value="task_items (任务条目)" style="text;html=1;strokeColor=none;fillColor=#3b82f6;fontSize=11;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="460" width="180" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="titems-cols" value="&lt;font color=&quot;#9ca3af&quot;&gt;PK&lt;/font&gt; id&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; task_id → tasks.id (CASCADE)&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; dataset_item_id → dataset_items.id&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; labeler_id → users.id&lt;br&gt;status (pending/labeled/skipped)&lt;br&gt;flow_history (JSON)&lt;br&gt;UNIQUE(task_id, dataset_item_id)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#1a1a2e;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="333" y="485" width="174" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Task → TaskItem -->
+        <mxCell id="fk-tti" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-tasks" target="table-titems">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- DatasetItem → TaskItem -->
+        <mxCell id="fk-diti" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=0;exitY=0.8;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-ditems" target="table-titems">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="610" y="180" /><mxPoint x="510" y="180" /><mxPoint x="510" y="499" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- results -->
+        <!-- ============================================================ -->
+        <mxCell id="table-results" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3b82f6;strokeWidth=2;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="610" y="520" width="210" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl-results-h" value="results (标注结果)" style="text;html=1;strokeColor=none;fillColor=#3b82f6;fontSize=11;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="520" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="results-cols" value="&lt;font color=&quot;#9ca3af&quot;&gt;PK&lt;/font&gt; id&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; task_id → tasks.id (CASCADE)&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; item_id → dataset_items.id&lt;br&gt;labeler_id, labeler_type&lt;br&gt;data (JSON), round&lt;br&gt;status (6态)&lt;br&gt;comment, ai_scores (JSON)&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; reviewer_id → users.id" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#1a1a2e;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="613" y="545" width="204" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Task → Result -->
+        <mxCell id="fk-tr" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-tasks" target="table-results">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="860" y="380" /><mxPoint x="860" y="565" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- TaskItem → Result (via item_id → dataset_items) -->
+        <mxCell id="fk-tir" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-titems" target="table-results">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- ai_reviews -->
+        <!-- ============================================================ -->
+        <mxCell id="table-aireviews" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E8FF;strokeColor=#8b5cf6;strokeWidth=2;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="920" y="520" width="200" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl-aireviews-h" value="ai_reviews (AI审核记录)" style="text;html=1;strokeColor=none;fillColor=#8b5cf6;fontSize=11;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="920" y="520" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="aireviews-cols" value="&lt;font color=&quot;#9ca3af&quot;&gt;PK&lt;/font&gt; id&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; task_id → tasks.id&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; item_id → dataset_items.id&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; result_id → results.id (UNIQUE)&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; agent_id → ai_agents.id&lt;br&gt;verdict, overall_score&lt;br&gt;dimensions (JSON)&lt;br&gt;summary, prompt_template&lt;br&gt;status, error_message&lt;br&gt;duration_ms, finished_at" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#1a1a2e;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="923" y="545" width="194" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Result → AiReview (1:1) -->
+        <mxCell id="fk-rar" style="endArrow=classic;html=1;strokeColor=#8b5cf6;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-results" target="table-aireviews">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- ai_agents -->
+        <!-- ============================================================ -->
+        <mxCell id="table-agents" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E8FF;strokeColor=#8b5cf6;strokeWidth=2;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="920" y="260" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl-agents-h" value="ai_agents (AI Agent)" style="text;html=1;strokeColor=none;fillColor=#8b5cf6;fontSize=11;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="920" y="260" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="agents-cols" value="&lt;font color=&quot;#9ca3af&quot;&gt;PK&lt;/font&gt; id&lt;br&gt;name, email (unique)&lt;br&gt;password_hash&lt;br&gt;system_prompt, llm_model&lt;br&gt;scoring_dimensions (JSON)&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; created_by → users.id&lt;br&gt;created_at, updated_at" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#1a1a2e;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="923" y="285" width="194" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Task → Agent -->
+        <mxCell id="fk-ta" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-tasks" target="table-agents">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- User → Agent (created_by) -->
+        <mxCell id="fk-ua" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-users" target="table-agents">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="280" y="150" /><mxPoint x="280" y="330" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Agent → AiReview -->
+        <mxCell id="fk-aar" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-agents" target="table-aireviews">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- audit_logs -->
+        <!-- ============================================================ -->
+        <mxCell id="table-audit" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#9ca3af;strokeWidth=2;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="50" y="520" width="190" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl-audit-h" value="audit_logs (审计日志)" style="text;html=1;strokeColor=none;fillColor=#9ca3af;fontSize=11;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="520" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="audit-cols" value="&lt;font color=&quot;#9ca3af&quot;&gt;PK&lt;/font&gt; id&lt;br&gt;actor_id, actor_name, actor_role&lt;br&gt;entity_type, entity_id&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; task_id → tasks.id (CASCADE)&lt;br&gt;action&lt;br&gt;from_status → to_status&lt;br&gt;detail&lt;br&gt;created_at" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#1a1a2e;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="53" y="545" width="184" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Task → Audit -->
+        <mxCell id="fk-tau" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=0;exitY=0.9;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-tasks" target="table-audit">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="610" y="520" /><mxPoint x="240" y="520" /><mxPoint x="240" y="595" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- export_jobs -->
+        <!-- ============================================================ -->
+        <mxCell id="table-export" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#9ca3af;strokeWidth=2;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="50" y="730" width="190" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl-export-h" value="export_jobs (导出记录)" style="text;html=1;strokeColor=none;fillColor=#9ca3af;fontSize=11;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="730" width="190" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="export-cols" value="&lt;font color=&quot;#9ca3af&quot;&gt;PK&lt;/font&gt; id&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; task_id → tasks.id (CASCADE)&lt;br&gt;&lt;font color=&quot;#ef4444&quot;&gt;FK&lt;/font&gt; requested_by → users.id&lt;br&gt;format, status&lt;br&gt;file_path, file_name&lt;br&gt;field_mapping&lt;br&gt;item_count, error_message&lt;br&gt;finished_at" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#1a1a2e;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="53" y="755" width="184" height="115" as="geometry" />
+        </mxCell>
+
+        <!-- Task → Export -->
+        <mxCell id="fk-te" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=0;exitY=0.95;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-tasks" target="table-export">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="610" y="710" /><mxPoint x="240" y="710" /><mxPoint x="240" y="802" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- User → Export -->
+        <mxCell id="fk-ue" style="endArrow=classic;html=1;strokeColor=#ef4444;strokeWidth=1;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="table-users" target="table-export">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="104" y="250" /><mxPoint x="30" y="250" /><mxPoint x="30" y="802" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- 关系说明 -->
+        <!-- ============================================================ -->
+        <mxCell id="rel-note" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#e5e7eb;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="330" y="730" width="790" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-note-t" value="核心关系链" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#1a1a2e;" vertex="1" parent="1">
+          <mxGeometry x="345" y="738" width="80" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-note-text" value="&lt;b&gt;主线&lt;/b&gt;：User(owner) → Dataset → DatasetItem&lt;br&gt;                                        ↘ Task → TaskItem → LabelResult → AiReview → AiAgent&lt;br&gt;                                        ↗&lt;br&gt;User(owner) → LabelSchema&lt;br&gt;&lt;br&gt;&lt;b&gt;旁路&lt;/b&gt;：User(reviewer) → LabelResult.reviewer_id&lt;br&gt;          User(labeler) → TaskItem.labeler_id&lt;br&gt;          User(owner) → ExportJob.requested_by&lt;br&gt;&lt;br&gt;&lt;b&gt;关键索引&lt;/b&gt;：task_items(task_id, labeler_id, status) / ai_reviews(task_id) / ai_reviews(agent_id) / tasks(owner_id)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=9;fontColor=#6b7280;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="345" y="758" width="760" height="110" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,40 @@
+/* ================================================================
+   SECTION CARD
+   ================================================================ */
+
+.section-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.section-card .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+.section-card .section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.section-card .section-body {
+  padding: 0;
+}
+.section-card .section-body.padded {
+  padding: 24px;
+}
+
+@media (max-width: 640px) {
+  .section-card .section-header {
+    padding: 14px 16px;
+  }
+  .section-card .section-title {
+    font-size: 15px;
+  }
+}
+
